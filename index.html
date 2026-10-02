@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Macro Coach</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Macro Coach">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f6f1ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#150f26" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<style>
+:root{--bg:#f6f1ff;--b2:#e6f8f1;--card:#fff;--tx:#1d1533;--mut:#6a6285;--ac:#7c3aed;--ac2:#ff5d8f;--on:#fff;--bd:#e5dcf7;--P:#2563eb;--C:#f59e0b;--F:#ec4899;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#150f26;--b2:#0e1f2a;--card:#211a38;--tx:#f0eafd;--mut:#a79fc4;--ac:#a78bfa;--ac2:#ff7aa8;--on:#150f26;--bd:#352b57;--P:#60a5fa;--C:#fbbf24;--F:#f472b6}}
+:root[data-theme="dark"]{--bg:#150f26;--b2:#0e1f2a;--card:#211a38;--tx:#f0eafd;--mut:#a79fc4;--ac:#a78bfa;--ac2:#ff7aa8;--on:#150f26;--bd:#352b57;--P:#60a5fa;--C:#fbbf24;--F:#f472b6}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background-color:var(--bg);background-image:linear-gradient(160deg,var(--bg),var(--b2));background-attachment:fixed;color:var(--tx);font:16px/1.4 "Avenir Next","Segoe UI",system-ui,sans-serif}
+main{max-width:560px;margin:0 auto;padding:16px 16px 100px}
+h1{font-size:27px;margin:6px 0 10px;letter-spacing:-.02em;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:18px;margin:16px 0 8px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin-bottom:10px;box-shadow:0 2px 10px rgba(124,58,237,.08)}
+.mut{color:var(--mut);font-size:14px}.nm{font-weight:700;font-size:17px;margin:2px 0}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:9px 0}
+input,select{width:150px;font:inherit;padding:9px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)}
+.b{width:100%;background:linear-gradient(90deg,var(--ac),var(--ac2));color:#fff;border:0;border-radius:14px;padding:14px;font:700 16px inherit;margin:4px 0 12px}
+.s{background:none;border:1px solid var(--bd);color:var(--tx);border-radius:10px;padding:7px 12px;font:inherit;font-size:14px;margin:8px 8px 0 0;text-decoration:none;display:inline-block}
+.bar{display:flex;height:10px;border-radius:5px;overflow:hidden;margin:10px 0 6px}
+.m{display:flex;gap:14px;font-size:14px;font-weight:700;flex-wrap:wrap}
+.m i{font-style:normal;color:var(--mut);font-weight:500}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 12px}
+.chips button{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:20px;padding:8px 14px;font:inherit;font-size:14px}
+.chips button.on{background:var(--ac);color:var(--on);border-color:var(--ac)}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;border:0;background:none;color:var(--mut);padding:8px 0;font:700 10px/1.2 inherit}
+.ck{display:flex;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--bd)}.ck input{width:22px;height:22px;flex:none}
+.wl{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--bd)}.wl button{background:none;border:0;color:var(--mut);font-size:16px}
+nav button.on{color:var(--ac)}
+.wk{font-size:14px;margin:5px 0}.wk b{display:inline-block;width:78px;color:var(--mut);font-weight:500}
+.pic{height:84px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:44px;margin-bottom:8px;background:var(--g)}
+.big{height:150px;font-size:76px}
+.s0{--g:linear-gradient(135deg,#ffd166,#ff8e53)}.s1{--g:linear-gradient(135deg,#7ee8a2,#2bb3a3)}.s2{--g:linear-gradient(135deg,#a78bfa,#f472b6)}.s3{--g:linear-gradient(135deg,#7dd3fc,#818cf8)}
+.lnk{cursor:pointer}.r2{display:flex;gap:12px;align-items:center;cursor:pointer}.em{font-size:30px}
+ul,ol{margin:0;padding-left:20px}li{margin:5px 0}
+textarea{width:100%;font:inherit;padding:9px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);min-height:64px;margin-bottom:8px}
+input[type=checkbox]{width:26px;height:26px;flex:none}.sets{display:flex;gap:8px;margin:6px 0}
+.st{display:flex;align-items:center;gap:8px;margin:6px 0}.st input[type=number]{width:72px}
+.tag{display:inline-block;border-radius:20px;padding:3px 10px;font-size:12px;font-weight:700;margin-right:6px}.up{background:rgba(34,197,94,.18);color:#16a34a}.pr{background:rgba(245,158,11,.2);color:#d97706}
+</style>
+</head>
+<body>
+<main id="v"></main>
+<nav id="n"></nav>
+<script>
+const R=`Havregrynsgröt med mjölk och banan|0|18|79|9
+Grekisk yoghurt med müsli och bär|0|29|41|8
+Äggröra med bröd|0|27|31|21
+Proteinpannkakor|0|35|45|10
+Keso med frukt och nötter|0|30|22|19
+Filmjölk med flingor och äpple|0|14|63|10
+Ostmacka med skinka|0|26|32|16
+Overnight oats med proteinpulver|0|38|47|12
+Omelett med grönsaker och ost|0|28|6|27
+Proteinsmoothie med banan och jordnötssmör|0|39|45|14
+Avokadotoast med ägg|0|21|34|27
+Kvarg med bär och granola|0|33|36|5
+Fruktsallad med yoghurt och müsli|0|14|78|8
+Smörgåsar med ägg och avokado|0|27|50|29
+Våfflor med kvarg och bär|0|28|62|16
+Gröt med proteinpulver och nötter|0|46|70|21
+Kycklingsallad med quinoa|1|42|45|18
+Tonfiskpasta|1|38|62|12
+Kyckling, ris och grönsaker|1|41|68|10
+Linssoppa med bröd|1|24|70|10
+Kycklingwrap med hummus|1|36|52|18
+Laxpoké bowl|1|31|58|22
+Köttfärssås med spaghetti|1|34|64|16
+Falafel med tzatziki och bulgur|1|22|70|20
+Kalkonburgare med sötpotatis|1|38|48|14
+Tacoskal med nötfärs|1|35|45|22
+Kikärtscurry med ris|1|18|85|14
+Stekt ägg med potatis och bönor|1|28|50|20
+Ugnsbakad kyckling med potatismos|1|42|62|14
+Pasta med kyckling och grädde|1|45|78|26
+Bibimbap med ägg och nötfärs|1|36|72|20
+Ugnsbakad lax med potatis och broccoli|2|39|51|24
+Kycklinggryta med ris|2|45|62|14
+Biff med ugnspotatis och sallad|2|42|48|22
+Stekt torsk med potatismos|2|38|46|12
+Kycklingwok med nudlar|2|40|70|14
+Chili con carne med ris|2|38|78|16
+Tofuwok med ris|2|28|74|20
+Vegetarisk lasagne|2|26|62|22
+Fläskfilé med couscous|2|44|55|14
+Räkpasta med vitlök|2|36|70|16
+Köttbullar med potatis och lingon|2|34|64|28
+Ugnskyckling med rotfrukter|2|46|40|18
+Pasta carbonara|2|38|74|30
+Nötgryta med ris|2|46|68|20
+Falukorv med potatismos|2|28|62|40
+Kvarg med bär och nötter|3|34|20|13
+Proteinshake med banan|3|35|42|6
+Äpple med jordnötssmör|3|9|31|17
+Keso med gurka och knäckebröd|3|30|26|11
+Nötter och russin|3|11|25|28
+Hårdkokta ägg med knäckebröd|3|24|21|18
+Grekisk yoghurt med honung och granola|3|23|45|8
+Proteinbar|3|20|22|8
+Riskakor med ost och skinka|3|18|21|9
+Proteinsmoothie med frukt|3|27|52|4
+Tonfisk på knäckebröd|3|30|22|3
+Hummus med knäckebröd och grönsaker|3|9|30|17
+Banan med jordnötssmör och riskakor|3|11|55|17
+Müsliyoghurt med frukt|3|19|66|10
+Ostmacka med äpple|3|16|54|13
+Mandlar och torkad frukt|3|9|35|22`.split("\n").map(l=>{const a=l.split("|"),p=+a[2],c=+a[3],f=+a[4];return{n:a[0],t:+a[1],p,c,f,k:4*p+4*c+9*f}});
+const S=["Frukost","Lunch","Middag","Mellanmål"],SH=[.25,.3,.3,.15];
+const X={"Överkropp A":"Bänkpress|4|6–8;Hantelrodd|4|8–10;Axelpress med hantlar|3|8–10;Latsdrag|3|10–12;Triceps pushdown|3|10–12;Bicepscurl|3|10–12",
+"Underkropp A":"Knäböj|4|6–8;Rumänsk marklyft|3|8–10;Benpress|3|10–12;Utfall|3|10 per ben;Vadpress|4|12–15;Planka|3|45 sek",
+"Överkropp B":"Axelpress med skivstång|4|6–8;Latsdrag|4|6–10;Lutande hantelpress|3|8–10;Sittande rodd|3|10–12;Sidolyft|3|12–15;Face pulls|3|12–15",
+"Underkropp B":"Marklyft|3|5;Bulgarisk split squat|3|8–10;Höftlyft|3|8–10;Bencurl|3|10–12;Stående vadpress|4|12–15;Magrullar|3|12–15",
+"Helkropp A":"Knäböj|3|6–8;Bänkpress|3|6–8;Hantelrodd|3|8–10;Axelpress med hantlar|3|8–10;Planka|3|45 sek",
+"Helkropp B":"Marklyft|3|5;Lutande hantelpress|3|8–10;Latsdrag|3|8–10;Utfall|3|10 per ben;Bicepscurl|2|12",
+"Helkropp C":"Benpress|3|10–12;Axelpress med skivstång|3|6–8;Sittande rodd|3|10–12;Höftlyft|3|8–10;Triceps pushdown|2|12",
+"Bröst":"Bänkpress|4|6–8;Lutande hantelpress|3|8–10;Kabelflyes|3|12–15;Armhävningar|3|max;Triceps pushdown|3|10–12",
+"Rygg":"Marklyft|3|5;Latsdrag|4|8–10;Hantelrodd|3|8–10;Sittande rodd|3|10–12;Face pulls|3|12–15",
+"Ben":"Knäböj|4|6–8;Rumänsk marklyft|3|8–10;Benpress|3|10–12;Bencurl|3|10–12;Vadpress|4|12–15",
+"Axlar":"Axelpress med skivstång|4|6–8;Sidolyft|4|12–15;Bakre axlar med hantlar|3|12–15;Face pulls|3|12–15;Magrullar|3|12–15",
+"Armar":"Bicepscurl|3|8–10;Triceps pushdown|3|8–10;Hammercurl|3|10–12;Franskt pressa|3|10–12;Planka|3|45 sek"};
+const P={"Helkropp 3 dagar":["Förslag: måndag, onsdag, fredag. Vila minst en dag mellan passen.","Helkropp A","Helkropp B","Helkropp C"],
+"Upper/Lower 3 dagar":["Förslag: måndag, onsdag, fredag. Veckan efter börjar du med underkropp.","Överkropp A","Underkropp A","Överkropp B"],
+"Upper/Lower 4 dagar":["Förslag: måndag, tisdag, torsdag, fredag.","Överkropp A","Underkropp A","Överkropp B","Underkropp B"],
+"5-dagars split":["Förslag: måndag till fredag, helg vila.","Bröst","Rygg","Ben","Axlar","Armar"]};
+const E=[[/smoothie|shake/,"🥤"],[/pannkak|våffl/,"🥞"],[/lax|torsk|tonfisk/,"🐟"],[/räk/,"🍤"],[/kyckling|kalkon/,"🍗"],[/biff|fläsk|nötfärs|nötgryta|köttbull|falukorv|bacon/,"🥩"],[/pasta|spaghetti|carbonara|lasagne/,"🍝"],[/wok|nudlar/,"🍜"],[/soppa/,"🍲"],[/curry|chili|gryta|bibimbap/,"🍛"],[/wrap|taco/,"🌮"],[/burgare/,"🍔"],[/sallad|bowl/,"🥗"],[/ägg|omelett/,"🍳"],[/toast|macka|smörgås|knäcke|riskak/,"🥪"],[/gröt|oats/,"🥣"],[/yoghurt|kvarg|keso|filmjölk/,"🥛"],[/nötter|mandel/,"🥜"],[/äpple|frukt|banan|bär/,"🍓"],[/hummus|falafel/,"🧆"],[/bar$/,"🍫"]];
+const em=n=>{n=n.toLowerCase();for(const[r,e]of E)if(r.test(n))return e;return"🍽️"};
+const MT={a:"Mät upp ingredienserna.|Varva eller blanda i en skål eller ett glas.|Toppa med bär, nötter eller frukt och servera direkt.",
+b:"Koka upp havre och vätska under omrörning i 3–5 minuter. För overnight oats: blanda och ställ i kylen över natten.|Rör ner proteinpulver och/eller frukt.|Toppa med bär eller nötter.",
+c:"Hacka grönsakerna och krydda proteinet med salt och peppar.|Hetta upp lite olja i en stekpanna på medelvärme och stek tills allt är genomstekt.|Koka tillbehören (ris, potatis, quinoa m.m.) enligt förpackningen.|Lägg upp och servera.",
+d:"Sätt ugnen på 200 °C.|Lägg ingredienserna på en plåt, ringla över olja och krydda.|Grädda 20–30 minuter tills allt är klart (fågel minst 75 °C inuti).|Servera med tillbehör.",
+e:"Koka ris eller nudlar enligt förpackningen.|Stek proteinet i het panna eller wok 4–6 minuter och lyft ur.|Woka grönsakerna 3–4 minuter, lägg tillbaka proteinet och tillsätt sås.|Servera över ris eller nudlar.",
+f:"Fräs lök och vitlök i lite olja.|Tillsätt protein/baljväxter och krydda.|Häll på vätska (buljong, tomat eller kokosmjölk) och låt sjuda 15–25 minuter.|Koka tillbehör och servera.",
+g:"Koka pastan enligt förpackningen.|Stek proteinet med vitlök och tillsätt sås eller grädde.|Blanda med pastan och servera.",
+h:"Förbered pålägg och grönsaker.|Bygg smörgåsen eller rulla wrapen.|Servera direkt.",
+i:"Lägg alla ingredienser i en blender.|Mixa till slät konsistens.|Häll upp och drick direkt.",
+j:"Vispa äggen med salt och peppar, hacka grönsaker.|Stek på medelvärme i lite smör eller olja.|Servera med tillbehören.",
+k:"Mixa eller vispa ihop smeten.|Stek i panna eller grädda i våffeljärn tills gyllene.|Toppa med kvarg och bär.",
+l:"Inget tillagning behövs – servera direkt.",
+m:"Koka äggen 8–9 minuter.|Kyl i kallt vatten och skala.|Servera med knäckebröd."};
+const I=`b|60 g havregryn;3 dl mjölk;1 banan
+a|250 g grekisk yoghurt;40 g müsli;50 g bär
+j|3 ägg;2 skivor bröd;5 g smör
+k|50 g havregryn;2 ägg;1 scoop proteinpulver
+a|250 g keso;100 g frukt;15 g nötter
+a|3 dl filmjölk;40 g flingor;1 äpple
+h|2 skivor bröd;40 g ost;40 g skinka;grönsaker
+b|50 g havregryn;1 scoop proteinpulver;1 msk chiafrön;2 dl mjölk
+j|3 ägg;30 g ost;grönsaker
+i|1 scoop proteinpulver;1 banan;1 msk jordnötssmör;3 dl mjölk
+h|2 skivor bröd;1/2 avokado;2 ägg
+a|250 g kvarg;80 g bär;30 g granola
+a|200 g frukt;200 g yoghurt;50 g müsli
+h|3 skivor bröd;2 ägg;1/2 avokado
+k|2 våfflor;150 g kvarg;80 g bär
+b|70 g havregryn;1 scoop proteinpulver;20 g nötter;3 dl mjölk
+c|150 g kyckling;70 g quinoa;grönsaker;1 msk olivolja
+g|80 g pasta;1 burk tonfisk;grönsaker;1 msk crème fraiche
+c|150 g kyckling;75 g ris;150 g grönsaker
+f|100 g röda linser;1 lök;4 dl buljong;2 skivor bröd
+h|1 stor tortilla;120 g kyckling;2 msk hummus;grönsaker
+c|120 g lax;70 g ris;grönsaker;1/4 avokado
+g|120 g nötfärs;80 g spaghetti;100 g tomatsås
+c|5 falafelbollar;60 g bulgur;tzatziki;sallad
+d|150 g kalkonfärs;250 g sötpotatis;sallad
+c|120 g nötfärs;3 tacoskal;grönsaker;30 g ost
+f|1 burk kikärtor;2 dl kokosmjölk;75 g ris;currypasta
+j|2 ägg;250 g potatis;100 g vita bönor
+d|150 g kyckling;300 g potatis;sås
+g|100 g pasta;140 g kyckling;1 dl grädde
+e|80 g ris;100 g nötfärs;1 ägg;grönsaker
+d|150 g lax;250 g potatis;150 g broccoli
+f|170 g kyckling;80 g ris;grönsaker;1 dl sås
+c|150 g biff;250 g potatis;sallad
+c|180 g torsk;250 g potatis;1 dl mjölk;grönsaker
+e|150 g kyckling;80 g nudlar;wokgrönsaker;sås
+f|120 g nötfärs;1 burk bönor;1 burk krossade tomater;80 g ris
+e|200 g tofu;80 g ris;wokgrönsaker;sojasås
+d|lasagneplattor;grönsaker;tomatsås;ost
+c|170 g fläskfilé;70 g couscous;grönsaker
+g|150 g räkor;85 g pasta;vitlök;1 dl grädde
+c|6 köttbullar;250 g potatis;sås;lingon
+d|180 g kyckling;300 g rotfrukter;1 msk olivolja
+g|100 g pasta;60 g bacon;2 ägg;parmesan
+f|180 g nötkött;80 g ris;rotfrukter;buljong
+c|200 g falukorv;300 g potatis;grönsaker
+a|250 g kvarg;80 g bär;20 g nötter
+i|1 scoop proteinpulver;3 dl mjölk;1 banan
+l|1 äpple;2 msk jordnötssmör
+h|250 g keso;gurka;3 knäckebröd
+l|50 g nötter;25 g russin
+m|3 ägg;3 knäckebröd
+a|200 g grekisk yoghurt;1 msk honung;30 g granola
+l|1 proteinbar
+h|3 riskakor;ost;skinka
+i|1 scoop proteinpulver;1 banan;bär;2 dl yoghurt
+h|1 burk tonfisk;3 knäckebröd
+l|100 g hummus;3 knäckebröd;grönsaksstavar
+h|1 banan;2 msk jordnötssmör;3 riskakor
+a|250 g yoghurt;50 g müsli;1 frukt
+h|2 skivor bröd;40 g ost;1 äpple
+l|40 g mandlar;40 g torkad frukt`.split("\n");
+R.forEach((r,i)=>{const q=I[i].split("|");r.i=i;r.m=q[0];r.g=q[1].split(";")});
+const ld=k=>{try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}};
+const sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const KEYS=["st","prog","kg","wl","buy","own","fav","hid","log","wat","kh","sd","th","sw"];
+const BASE=R.length;let own=ld("own")||[],fav=ld("fav")||{},hid=ld("hid")||{},log=ld("log")||{},wat=ld("wat")||{},addR=false,kh=ld("kh")||{},sd=ld("sd")||{},sw=ld("sw")||{};const th0=ld("th");if(th0)document.documentElement.setAttribute("data-theme",th0);
+MT.own="Inga steg angivna.";
+function loadOwn(){R.length=BASE;own.forEach(o=>{const p=+o.p,c=+o.c,f=+o.f;R.push({n:o.n,t:+o.t,p,c,f,k:4*p+4*c+9*f,m:"own",g:o.g,st:o.s,i:R.length,own:1})})}loadOwn();
+const TD=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+const saved=ld("st");
+let st=Object.assign({sex:"Man",w:80,h:180,a:30,act:1.55,goal:0,prot:1.8,fat:25,diet:"all",kc:0},saved);
+let prog=ld("prog");if(!P[prog])prog="Upper/Lower 4 dagar";
+let tab="home",ob=saved?0:1,lk=[],day=null,week=null,rec=null,tday=P[prog][1],kg=ld("kg")||{},wsub="meny",wl=ld("wl")||[],buy=ld("buy")||{};
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+function G(){const b=10*st.w+6.25*st.h-5*st.a+(st.sex=="Man"?5:-161),k=st.kc>0?st.kc:b*st.act+st.goal,p=st.prot*st.w,f=k*st.fat/900;return{k,p,f,c:Math.max(0,(k-4*p-9*f)/4)}}
+const MEAT=/kyckling|kalkon|nötfärs|nötkött|biff|fläsk|falukorv|bacon|köttbull|skinka/i,FISH=/lax|torsk|tonfisk|räk/i;
+const okD=r=>{const t=r.n+" "+r.g.join(" "),m=MEAT.test(t),f=FISH.test(t),d=st.diet;return d=="veg"?!m&&!f:d=="pesc"?!m:d=="nofish"?!f:true};
+const pl=i=>{const a=R.filter(r=>r.t==i&&okD(r)&&!hid[r.n]);return a.length?a:R.filter(r=>r.t==i)};
+let ti=null,tend=0;
+function tick(){const e=document.getElementById("tm"),l=Math.ceil((tend-Date.now())/1000);if(l<=0){clearInterval(ti);if(e)e.textContent="Klart! 💪";try{navigator.vibrate&&navigator.vibrate(400)}catch(x){}}else if(e)e.textContent=Math.floor(l/60)+":"+String(l%60).padStart(2,"0")}
+function rest(n){clearInterval(ti);tend=Date.now()+n*1000;tick();ti=setInterval(tick,250)}
+function pick(i,ex){const g=G(),k=g.k*SH[i],p=g.p*SH[i],c=g.c*SH[i],f=g.f*SH[i],pool=pl(i);
+for(const tol of[.4,.5,.6,.8,1.2]){let m=pool.filter(r=>{const x=k/r.k;return x>=.5&&x<=3&&Math.abs(r.p*x-p)<=tol*p&&Math.abs(r.c*x-c)<=tol*c&&Math.abs(r.f*x-f)<=tol*f});
+if(m.length>1&&ex)m=m.filter(r=>r!==ex);m=m.concat(m.filter(r=>fav[r.n]),m.filter(r=>fav[r.n]));if(m.length)return mk(rnd(m),k)}
+return mk(rnd(pool),k)}
+const mk=(r,k)=>({r,x:Math.max(.25,Math.round(k/r.k*4)/4)});
+const newDay=()=>[0,1,2,3].map(i=>pick(i));
+const bar=(p,c,f)=>{const t=4*p+4*c+9*f||1;return`<div class="bar"><span style="width:${400*p/t}%;background:var(--P)"></span><span style="width:${400*c/t}%;background:var(--C)"></span><span style="width:${900*f/t}%;background:var(--F)"></span></div>`};
+const mac=(p,c,f)=>`<div class="m"><span style="color:var(--P)">${Math.round(p)} g <i>protein</i></span><span style="color:var(--C)">${Math.round(c)} g <i>kolh.</i></span><span style="color:var(--F)">${Math.round(f)} g <i>fett</i></span></div>`;
+const res=()=>{const g=G();return`<div class="nm">${Math.round(g.k)} kcal per dag</div>${bar(g.p,g.c,g.f)}${mac(g.p,g.c,g.f)}`};
+function fld(l,k,o){const v=st[k];return`<div class="row"><label>${l}</label>`+(o?`<select onchange="up('${k}',this.value)">${o.map(x=>`<option value="${x[0]}"${x[0]==v?" selected":""}>${x[1]}</option>`).join("")}</select>`:`<input type="number" inputmode="decimal" value="${v}" onchange="up('${k}',this.value)">`)+`</div>`}
+function up(k,v){st[k]=k=="sex"||k=="diet"?v:+v;sv("st",st);day=null;week=null;const e=document.getElementById("res");if(e)e.innerHTML=res()}
+function sc(s,x){const m=s.match(/^(1\/2|1\/4|\d+(?:\.\d+)?)\s+(.*)$/);if(!m)return s;const n=m[1]=="1/2"?.5:m[1]=="1/4"?.25:+m[1];return String(+(n*x).toFixed(n*x>=10?0:2)).replace(".",",")+" "+m[2]}
+const openR=(i,x)=>{rec={i,x};V();scrollTo(0,0)};
+const yt=n=>"https://www.youtube.com/results?search_query="+encodeURIComponent(n+" övning teknik");
+const pic=(r,c)=>`<div class="pic ${c||""} s${r.t}">${em(r.n)}</div>`;
+const setP=v=>{prog=v;sv("prog",v);tday=P[v][1];V()};
+function shop(){week=week||[0,1,2,3,4,5,6].map(newDay);const m={};
+week.forEach(d=>d.forEach(({r,x})=>r.g.forEach(g=>{const q=g.match(/^(1\/2|1\/4|\d+(?:\.\d+)?)\s+(.*)$/),k=q?q[2]:g,n=q?(q[1]=="1/2"?.5:q[1]=="1/4"?.25:+q[1])*x:0;m[k]=(m[k]||0)+n})));
+const ks=Object.keys(m).sort((a,b)=>a.localeCompare(b,"sv"));shopTxt="Inköpslista:\n"+ks.map(k=>"- "+(m[k]?String(+m[k].toFixed(m[k]>=10?0:2)).replace(".",",")+" ":"")+k).join("\n");
+return`<p class="mut">Baseras på veckomenyn. Slumpa en ny vecka för en ny lista.</p><div class="c">${ks.map(k=>{const q=m[k]?String(+m[k].toFixed(m[k]>=10?0:2)).replace(".",",")+" ":"";return`<label class="ck"><input type="checkbox" ${buy[k]?"checked":""} onchange="buy['${k}']=this.checked;sv('buy',buy)"><span>${q}${k}</span></label>`}).join("")}</div><button class="s" onclick="buy={};sv('buy',buy);V()">Töm alla bockar</button><button class="s" onclick="shareT(shopTxt)">📤 Dela lista</button>`}
+function addW(){const v=+document.getElementById("wv").value;if(!v)return;const d=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);wl=wl.filter(e=>e.d!=d);wl.push({d,w:v});wl.sort((a,b)=>a.d<b.d?-1:1);sv("wl",wl);V()}
+function delW(i){wl.splice(i,1);sv("wl",wl);V()}
+function fram(){let h=`<div class="c"><div class="row"><label>Vikt idag (kg)</label><input id="wv" type="number" inputmode="decimal" step="0.1"></div><button class="b" style="margin-bottom:0" onclick="addW()">Spara vikt</button></div>`;
+if(!wl.length)return h+`<p class="mut">Skriv in din vikt för att börja följa dina framsteg. Spara gärna en gång i veckan.</p>`;
+const ws=wl.map(e=>e.w),a=ws[0],z=ws[ws.length-1],df=z-a,lo=Math.min(...ws)-1,hi=Math.max(...ws)+1,n=ws.length,
+pt=ws.map((w,i)=>[24+(n>1?i*252/(n-1):126),110-(w-lo)/(hi-lo)*90]);
+h+=`<div class="c"><div class="nm">${z} kg</div><div class="mut">${df>0?"+":""}${df.toFixed(1)} kg sedan start (${a} kg)</div><svg viewBox="0 0 300 130" width="100%"><polyline fill="none" stroke="var(--ac)" stroke-width="3" stroke-linejoin="round" points="${pt.map(p=>p.join(",")).join(" ")}"/>${pt.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="var(--ac2)"/>`).join("")}<text x="2" y="18" font-size="10" fill="var(--mut)">${hi.toFixed(0)}</text><text x="2" y="112" font-size="10" fill="var(--mut)">${lo.toFixed(0)}</text></svg></div><div class="c">`+wl.map((e,i)=>`<div class="wl"><span>${e.d}</span><b>${e.w} kg</b><button onclick="delW(${i})">✕</button></div>`).reverse().join("")+`</div>`;return h}
+let shopTxt="";
+const shareT=t=>{try{if(navigator.share)navigator.share({text:t});else navigator.clipboard.writeText(t)}catch(e){}};
+const shareDay=()=>shareT("Dagens meny ("+Math.round(G().k)+" kcal):\n"+day.map((d,i)=>S[i]+": "+d.r.n+" ("+d.x+"×)").join("\n"));
+const setTh=v=>{v?document.documentElement.setAttribute("data-theme",v):document.documentElement.removeAttribute("data-theme");sv("th",v)};
+const sk=(k,j)=>TD()+"|"+k+"|"+j;
+const tv=n=>((kh[n]||[]).find(e=>e.d==TD())||{}).kg||"";
+const pv=n=>{const a=(kh[n]||[]).filter(e=>e.d<TD());return a.length?a[a.length-1].kg:""};
+const setKg=(n,v)=>{const t=TD();kh[n]=(kh[n]||[]).filter(e=>e.d!=t);if(v)kh[n].push({d:t,kg:v});sv("kh",kh)};
+const tsd=(k,v)=>{v?sd[k]=1:delete sd[k];sv("sd",sd);V()};
+const OPT={sex:[["Man","Man"],["Kvinna","Kvinna"]],act:[[1.2,"Stillasittande"],[1.375,"Lätt aktiv"],[1.55,"Måttligt aktiv"],[1.725,"Mycket aktiv"],[1.9,"Extremt aktiv"]],goal:[[-500,"Gå ner i vikt"],[0,"Behålla vikten"],[300,"Bygga muskler"]],diet:[["all","Allt"],["pesc","Utan kött"],["veg","Vegetarisk"],["nofish","Utan fisk och skaldjur"]]};
+const obF=()=>{sv("st",st);ob=0;tab="home";V()};
+function obV(){let h=`<div class="mut" style="margin-top:12px">Steg ${ob} av 3</div>`;
+if(ob==1)h+=`<h1>Välkommen! 👋</h1><p class="mut">Svara på några frågor så anpassar appen kalorier, macros och mat efter dig.</p><div class="c">${fld("Kön","sex",OPT.sex)}${fld("Vikt (kg)","w")}${fld("Längd (cm)","h")}${fld("Ålder","a")}</div>`;
+if(ob==2)h+=`<h1>Din vardag och ditt mål</h1><div class="c">${fld("Aktivitet","act",OPT.act)}${fld("Mål","goal",OPT.goal)}${fld("Kost","diet",OPT.diet)}</div>`;
+if(ob==3)h+=`<h1>Din plan är klar 🎉</h1><div class="c" id="res">${res()}</div><div class="mut" style="margin:8px 0">Välj träningsprogram:</div><select style="width:100%" onchange="setP(this.value)">${Object.keys(P).map(k=>`<option${k==prog?" selected":""}>${k}</option>`).join("")}</select><p class="mut">${P[prog][0]}</p>`;
+h+=`<button class="b" onclick="ob==3?obF():(ob++,V())">${ob==3?"Visa min första dag":"Nästa"}</button>`+(ob>1?`<button class="s" onclick="ob--;V()">‹ Tillbaka</button>`:"");
+document.getElementById("v").innerHTML=h;document.getElementById("n").innerHTML="";scrollTo(0,0)}
+function todaySession(){const n=P[prog].length-1,i={3:[1,3,5],4:[1,2,4,5],5:[1,2,3,4,5]}[n].indexOf(new Date().getDay());return i<0?null:P[prog][1+i]}
+function home(){const g=G(),t=todaySession(),d=(day=day||newDay()),e=tl(),k=Object.values(e.m).concat(e.x).reduce((u,v)=>u+(v.k||0),0);
+return`<h1>Hej! 👋</h1><div class="mut" style="margin:-6px 0 10px">${new Date().toLocaleDateString("sv-SE",{weekday:"long",day:"numeric",month:"long"})}</div><div class="c"><div class="mut">Dagens pass</div>${t?`<div class="nm">${t}</div><div class="mut">${X[t].split(";").length} övningar</div><button class="b" style="margin:10px 0 0" onclick="tday='${t}';tab='tran';V()">Starta passet</button>`:`<div class="nm">Vilodag 😴</div><div class="mut">Ta en promenad och låt musklerna återhämta sig.</div>`}</div><div class="c"><div class="mut">Dagens mat</div>${d.map((m,i)=>`<div class="wk lnk" onclick="openR(${m.r.i},${m.x})"><b>${S[i]}</b>${em(m.r.n)} ${m.r.n} ›</div>`).join("")}<div class="mut" style="margin-top:8px">Ätit ${Math.round(k)} av ${Math.round(g.k)} kcal</div><div class="bar" style="height:12px"><span style="width:${Math.min(100,100*k/g.k)}%;background:var(--ac)"></span></div><button class="s" onclick="tab='idag';V()">Se hela dagen</button><button class="s" onclick="tab='fram';fsub='dag';dsel=TD();V()">📒 Dagbok</button></div>${water()}<p class="mut">Tips: lägg appen på hemskärmen via webbläsarens delningsmeny.</p>`}
+const tlD=d=>log[d]=log[d]||{m:{},x:[]},tl=()=>tlD(TD());
+let fsub="dag",dsel=TD(),urng=7,rcL=[],ssel="";
+const swk=(n,j)=>TD()+"|"+n+"|"+j;
+const gs=(n,j)=>{const v=sw[swk(n,j)];return v?{kg:v[0],r:v[1]}:{}};
+function setSet(n,j,f,v,key){const k=swk(n,j),o=sw[k]||["",""];o[f=="kg"?0:1]=v;sw[k]=o;if(+o[0]&&+o[1])sd[sk(key,j)]=1;sv("sw",sw);sv("sd",sd);const m=Math.max(0,...[...Array(12)].map((_,i)=>+(sw[swk(n,i)]||[])[0]||0));setKg(n,m?String(m):"");V()}
+function hist(n){const g={};Object.keys(sw).forEach(k=>{const a=k.split("|");if(a[1]!=n)return;const kg=+sw[k][0],r=+sw[k][1];if(!kg||!r)return;(g[a[0]]=g[a[0]]||[]).push({kg,r,j:+a[2]})});return Object.keys(g).sort().map(d=>{const q=g[d].sort((x,y)=>x.j-y.j);return{d,s:q,max:Math.max(...q.map(x=>x.kg)),e1:Math.max(...q.map(x=>x.kg*(1+x.r/30)))}})}
+const lastSets=n=>{const h=hist(n).filter(x=>x.d<TD());return h.length?h[h.length-1].s:[]};
+function badge(n){const h=hist(n),t=h.find(x=>x.d==TD()),p=h.filter(x=>x.d<TD());if(!t||!p.length)return"";let o="";const l=p[p.length-1],df=+(t.max-l.max).toFixed(1);if(df>0)o+=`<span class="tag up">▲ +${df} kg sedan förra</span>`;if(t.e1>Math.max(...p.map(x=>x.e1)))o+=`<span class="tag pr">🏆 Nytt PR</span>`;return o?`<div style="margin:4px 0">${o}</div>`:""}
+function sty(){const names=[...new Set(Object.keys(sw).map(k=>k.split("|")[1]))].filter(n=>hist(n).length).sort((a,b)=>a.localeCompare(b,"sv"));
+if(!names.length)return`<p class="mut">Logga kg och reps för dina set under Träning, så ser du här hur du utvecklas och dina rekord.</p>`;
+if(!names.includes(ssel))ssel=names[0];const h=hist(ssel),n=h.length,mx=Math.max(...h.map(x=>x.max)),lo=Math.min(...h.map(x=>x.max))-2.5,hi=mx+2.5,pt=h.map((x,i)=>[24+(n>1?i*252/(n-1):126),110-(x.max-lo)/(hi-lo)*90]),pr=h.reduce((b,x)=>x.e1>b.e1?x:b,h[0]),df=h[n-1].max-h[0].max;
+return`<select style="width:100%;margin-bottom:10px" onchange="ssel=this.value;V()">${names.map(x=>`<option${x==ssel?" selected":""}>${x}</option>`).join("")}</select><div class="c"><div class="nm">${h[n-1].max} kg</div><div class="mut">Tyngsta set senaste passet · ${n>1?(df>=0?"+":"")+df.toFixed(1)+" kg sedan start":"första loggen"}</div><svg viewBox="0 0 300 130" width="100%"><polyline fill="none" stroke="var(--ac)" stroke-width="3" stroke-linejoin="round" points="${pt.map(q=>q.join(",")).join(" ")}"/>${pt.map(q=>`<circle cx="${q[0]}" cy="${q[1]}" r="4" fill="var(--ac2)"/>`).join("")}<text x="2" y="18" font-size="10" fill="var(--mut)">${hi.toFixed(0)}</text><text x="2" y="112" font-size="10" fill="var(--mut)">${lo.toFixed(0)}</text></svg></div><div class="c"><div class="row" style="margin-top:0"><span>🏆 Bästa beräknade 1RM</span><b>${pr.e1.toFixed(1)} kg</b></div><div class="mut">Uppskattning med Epley-formeln: vikt × (1 + reps/30).</div></div><div class="c">${h.slice().reverse().map(x=>`<div class="wl"><span>${x.d}</span><b>${x.s.map(y=>y.kg+"×"+y.r).join(", ")}</b></div>`).join("")}</div>`}
+const FD=`Ägg|13|1|11
+Kycklingfilé (rå)|23|0|2
+Nötfärs 10 %|20|0|10
+Lax|20|0|13
+Torsk|17|0|1
+Tonfisk (på burk)|25|0|1
+Räkor|18|0|1
+Fläskfilé|22|0|3
+Skinka|18|1|4
+Ris (kokt)|2.7|28|0.3
+Ris (okokt)|7|78|1
+Pasta (kokt)|5|25|1
+Pasta (okokt)|13|72|2
+Potatis|2|17|0.1
+Sötpotatis|1.6|20|0.1
+Havregryn|13|60|7
+Bröd (fullkorn)|9|40|3
+Knäckebröd|10|65|2
+Mjölk 1,5 %|3.4|4.8|1.5
+Grekisk yoghurt|10|4|2
+Kvarg naturell|12|4|0.3
+Keso|12|3|4
+Ost (hård)|27|0|28
+Smör|0.5|0|81
+Olivolja|0|0|100
+Avokado|2|2|15
+Banan|1|23|0.3
+Äpple|0.3|12|0.2
+Apelsin|1|9|0.2
+Blåbär|0.7|12|0.3
+Broccoli|3|4|0.4
+Tomat|0.9|3|0.2
+Gurka|0.7|2|0.1
+Morot|0.9|8|0.2
+Paprika|1|5|0.3
+Spenat|3|1|0.4
+Kikärtor (kokta)|8|20|3
+Röda linser (okokta)|25|50|2
+Tofu|12|2|7
+Jordnötssmör|25|12|50
+Mandlar|21|5|50
+Proteinpulver|80|8|5
+Honung|0.3|82|0
+Mörk choklad|8|33|42`.split("\n").map(l=>{const a=l.split("|");return{n:a[0],p:+a[1],c:+a[2],f:+a[3]}});
+const prevD=()=>{const d=new Date(dsel+"T12:00:00");d.setDate(d.getDate()-1);return new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)};
+function copyPrev(){const e=log[prevD()];if(!e)return;const t=tlD(dsel);Object.values(e.m).concat(e.x).forEach(v=>t.x.push(Object.assign({},v)));sv("log",log);V()}
+function recent(){const seen={},out=[];for(let i=0;i<30&&out.length<8;i++){const e=log[dstr(i)];if(!e)continue;Object.values(e.m).concat(e.x).forEach(v=>{if(v.n&&!seen[v.n]&&out.length<8){seen[v.n]=1;out.push(v)}})}return out}
+function addRc(i){tlD(dsel).x.push(Object.assign({},rcL[i]));sv("log",log);V()}
+function addFd(){const f=FD.find(x=>x.n.toLowerCase()==document.getElementById("fn").value.trim().toLowerCase()),g=+document.getElementById("fg").value;if(!f||!g)return;const q=g/100;tlD(dsel).x.push({n:f.n+" "+g+" g",k:(4*f.p+4*f.c+9*f.f)*q,p:f.p*q,c:f.c*q,f:f.f*q});sv("log",log);V()}
+function logRec(i,x){const r=R[i];tlD(TD()).x.push({n:r.n+" ("+x+"×)",k:r.k*x,p:r.p*x,c:r.c*x,f:r.f*x});sv("log",log);rec=null;tab="fram";fsub="dag";dsel=TD();V()}
+const dstr=o=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4-o*864e5).toISOString().slice(0,10);
+const dayTot=d=>{const e=log[d];if(!e)return null;const a=Object.values(e.m).concat(e.x);return a.length?["k","p","c","f"].map(j=>a.reduce((u,v)=>u+(v[j]||0),0)):null};
+function shiftD(n){const d=new Date(dsel+"T12:00:00");d.setDate(d.getDate()+n);const t=new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);if(t<=TD()){dsel=t;V()}}
+function delE(k,i){const e=tlD(dsel);k=="m"?delete e.m[i]:e.x.splice(i,1);sv("log",log);V()}
+function addRec(){const r=R[+document.getElementById("ar").value],x=+document.getElementById("ax").value||1;tlD(dsel).x.push({n:r.n+" ("+x+"×)",k:r.k*x,p:r.p*x,c:r.c*x,f:r.f*x});sv("log",log);V()}
+function diary(){rcL=recent();const d=dsel,e=log[d]||{m:{},x:[]},g=G(),it=[];
+Object.keys(e.m).forEach(i=>it.push(["m",i,S[i]+": "+e.m[i].n,e.m[i].k]));e.x.forEach((v,i)=>it.push(["x",i,v.n||"Annat",v.k]));
+const t=dayTot(d)||[0,0,0,0],lab=d==TD()?"Idag":new Date(d+"T12:00:00").toLocaleDateString("sv-SE",{weekday:"long",day:"numeric",month:"long"}),w=wat[d]||0;
+return`<div class="row"><button class="s" style="margin:0" onclick="shiftD(-1)">‹</button><b>${lab}</b><button class="s" style="margin:0" ${d>=TD()?"disabled":""} onclick="shiftD(1)">›</button></div><div class="c"><div class="nm">${Math.round(t[0])} av ${Math.round(g.k)} kcal</div><div class="bar" style="height:12px"><span style="width:${Math.min(100,100*t[0]/g.k)}%;background:var(--ac)"></span></div>${mac(t[1],t[2],t[3])}</div><div class="c">${it.length?it.map(x=>`<div class="wl"><span>${x[2]}<br><span class="mut">${Math.round(x[3])} kcal</span></span><button onclick="delE('${x[0]}',${x[1]})">✕</button></div>`).join(""):`<div class="mut">Inget loggat den här dagen.</div>`}<button class="s" onclick="copyPrev()">📋 Kopiera gårdagen</button></div>${rcL.length?`<div class="mut">Senast loggat – tryck för att lägga till:</div><div class="chips">${rcL.map((v,i)=>`<button onclick="addRc(${i})">${v.n}</button>`).join("")}</div>`:""}<div class="c"><div class="nm">💧 ${(w/10).toFixed(1).replace(".",",")} liter</div><button class="s" onclick="addWat(2,'${d}')">+ glas</button><button class="s" onclick="addWat(5,'${d}')">+ flaska</button><button class="s" onclick="addWat(-${w},'${d}')">Nollställ</button></div><h2>Lägg till mat</h2><div class="c"><div class="row"><select id="ar" style="width:100%">${R.map((r,i)=>[r,i]).sort((a,b)=>a[0].n.localeCompare(b[0].n,"sv")).map(([r,i])=>`<option value="${i}">${r.n}</option>`).join("")}</select></div><div class="row"><label>Portioner</label><input id="ax" type="number" value="1" step="0.25"></div><button class="b" style="margin-bottom:0" onclick="addRec()">Lägg till rätt</button></div><div class="c"><div class="mut">Sök livsmedel (per 100 g):</div><div class="row"><input id="fn" list="fl" placeholder="t.ex. Ägg" style="width:100%"><datalist id="fl">${FD.map(f=>`<option value="${f.n}">`).join("")}</datalist></div><div class="row"><label>Gram</label><input id="fg" type="number" value="100"></div><button class="s" onclick="addFd()">Lägg till</button></div><div class="c"><div class="mut">Eller lägg till annan mat:</div><div class="row"><input id="xn" type="text" placeholder="Namn" style="width:100%"></div><div class="row"><input id="xk" type="number" placeholder="kcal" style="width:23%"><input id="xp" type="number" placeholder="prot" style="width:23%"><input id="xc" type="number" placeholder="kolh" style="width:23%"><input id="xf" type="number" placeholder="fett" style="width:23%"></div><button class="s" onclick="addX('${d}')">Lägg till</button></div>`}
+function utv(){const N=urng,g=G(),ds=[...Array(N)].map((_,i)=>dstr(N-1-i)),tt=ds.map(dayTot),lg=tt.filter(Boolean),avg=j=>lg.length?lg.reduce((u,v)=>u+v[j],0)/lg.length:0,mx=Math.max(g.k*1.3,...tt.map(v=>v?v[0]:0)),wd=new Set(Object.keys(sd).map(k=>k.split("|")[0])),tr=ds.filter(d=>wd.has(d)).length,wv=ds.map(d=>wat[d]||0).filter(v=>v>0);
+const d7=[...Array(7)].map((_,i)=>dstr(6-i)),t7=d7.map(dayTot).filter(Boolean),a7=j=>t7.length?t7.reduce((u,v)=>u+v[j],0)/t7.length:0,tr7=d7.filter(d=>wd.has(d)).length;
+let stk=0;for(let i=0;i<400;i++){if(dayTot(dstr(i)))stk++;else if(i>0)break}
+const bw=300/N,gy=130-120*g.k/mx,strg=Object.keys(kh).filter(n=>kh[n].length>1).map(n=>[n,+kh[n][0].kg,+kh[n][kh[n].length-1].kg]).filter(x=>x[1]&&x[2]).slice(0,8),ww=wl.filter(e=>e.d>=ds[0]);
+return`<div class="c"><div class="nm">Veckans sammanfattning</div><div class="mut" style="margin:6px 0">${t7.length} av 7 dagar loggade – ${t7.length>=5?"starkt jobbat! 💪":t7.length>=3?"bra start, försök logga lite oftare.":"logga fler dagar för en tydligare bild."}</div>${t7.length?`<div class="wk">Snitt ${Math.round(a7(0))} kcal (${Math.round(100*a7(0)/g.k)} % av målet)</div><div class="wk">Snitt ${Math.round(a7(1))} g protein (${Math.round(100*a7(1)/g.p)} % av målet)</div>`:""}<div class="wk">${tr7} träningsdagar</div></div><div class="chips">${[7,30].map(n=>`<button class="${n==N?"on":""}" onclick="urng=${n};V()">${n} dagar</button>`).join("")}</div><div class="c"><div class="nm">Kalorier per dag</div><div class="mut">Streckad linje = ditt mål (${Math.round(g.k)} kcal)</div><svg viewBox="0 0 300 138" width="100%">${ds.map((d,i)=>{const v=tt[i],hh=v?120*v[0]/mx:0;return`<rect x="${i*bw+1}" y="${130-hh}" width="${bw-2}" height="${hh}" rx="2" fill="${v&&v[0]>g.k*1.1?"var(--F)":"var(--ac)"}"/>`+(N==7?`<text x="${i*bw+bw/2}" y="137" font-size="9" text-anchor="middle" fill="var(--mut)">${"SMTOTFL"[new Date(d+"T12:00:00").getDay()]}</text>`:"")}).join("")}<line x1="0" x2="300" y1="${gy}" y2="${gy}" stroke="var(--C)" stroke-width="2" stroke-dasharray="4 3"/></svg></div><div class="c"><div class="row"><span>Snitt kcal (dagar med logg)</span><b>${Math.round(avg(0))}</b></div><div class="row"><span>Snitt protein</span><b>${Math.round(avg(1))} g <span class="mut">av ${Math.round(g.p)}</span></b></div><div class="row"><span>Loggade dagar</span><b>${lg.length} av ${N}</b></div><div class="row"><span>Träningsdagar</span><b>${tr}</b></div><div class="row"><span>Snitt vatten</span><b>${wv.length?(wv.reduce((u,v)=>u+v,0)/wv.length/10).toFixed(1).replace(".",","):"–"} liter</b></div><div class="row"><span>Streak 🔥</span><b>${stk} dagar</b></div>${ww.length>1?`<div class="row"><span>Viktförändring</span><b>${(ww[ww.length-1].w-ww[0].w>0?"+":"")+(ww[ww.length-1].w-ww[0].w).toFixed(1)} kg</b></div>`:""}</div>${strg.length?`<h2>Styrka</h2><div class="c">`+strg.map(x=>`<div class="row"><span>${x[0]}</span><b>${x[1]} → ${x[2]} kg <span class="mut">(${x[2]-x[1]>0?"+":""}${x[2]-x[1]})</span></b></div>`).join("")+`</div>`:""}`}
+function eat(i){const e=tl(),d=day[i],r=d.r;e.m[i]?delete e.m[i]:e.m[i]={n:r.n,k:r.k*d.x,p:r.p*d.x,c:r.c*d.x,f:r.f*d.x};sv("log",log);V()}
+function addX(d){const e=tlD(d||TD()),g=i=>+document.getElementById(i).value||0,nm=document.getElementById("xn");if(!g("xk")&&!g("xp")&&!g("xc")&&!g("xf"))return;e.x.push({n:(nm&&nm.value.replace(/['"<>]/g,""))||"Annat",k:g("xk")||4*g("xp")+4*g("xc")+9*g("xf"),p:g("xp"),c:g("xc"),f:g("xf")});sv("log",log);V()}
+function eaten(g){const e=tl(),a=Object.values(e.m).concat(e.x),s=["k","p","c","f"].map(j=>a.reduce((u,v)=>u+(v[j]||0),0));
+return`<div class="c"><div class="nm">Ätit idag: ${Math.round(s[0])} av ${Math.round(g.k)} kcal</div><div class="bar" style="height:12px"><span style="width:${Math.min(100,100*s[0]/g.k)}%;background:var(--ac)"></span></div>${mac(s[1],s[2],s[3])}<div class="mut" style="margin:8px 0">Tryck "Åt detta" på en måltid ovan, eller lägg till annat:</div><div class="row"><input id="xk" type="number" placeholder="kcal" style="width:23%"><input id="xp" type="number" placeholder="prot" style="width:23%"><input id="xc" type="number" placeholder="kolh" style="width:23%"><input id="xf" type="number" placeholder="fett" style="width:23%"></div><button class="s" onclick="addX()">Lägg till</button><button class="s" onclick="tl().x=[];tl().m={};sv('log',log);V()">Nollställ</button></div>`}
+function addWat(n,d){const t=d||TD();wat[t]=Math.max(0,(wat[t]||0)+n);sv("wat",wat);V()}
+function water(){const v=wat[TD()]||0,g=Math.round(st.w*35/100),f=x=>(x/10).toFixed(1).replace(".",",");
+return`<div class="c"><div class="nm">💧 Vatten: ${f(v)} av ca ${f(g)} liter</div><div class="bar" style="height:12px"><span style="width:${Math.min(100,100*v/g)}%;background:var(--P)"></span></div><button class="s" onclick="addWat(2)">+ glas (2 dl)</button><button class="s" onclick="addWat(5)">+ flaska (5 dl)</button><button class="s" onclick="addWat(-${v})">Nollställ</button></div>`}
+const tfav=n=>{fav[n]?delete fav[n]:fav[n]=1;sv("fav",fav);V()};
+const thid=n=>{hid[n]?delete hid[n]:hid[n]=1;sv("hid",hid);day=null;week=null;V()};
+const delR=j=>{own.splice(j,1);sv("own",own);loadOwn();rec=null;day=null;week=null;V()};
+const rform=()=>`<div class="c"><div class="row"><label>Namn</label><input id="on" type="text"></div><div class="row"><label>Typ</label><select id="ot">${S.map((s,i)=>`<option value="${i}">${s}</option>`).join("")}</select></div><div class="row"><label>Protein (g)</label><input id="op" type="number"></div><div class="row"><label>Kolhydrater (g)</label><input id="oc" type="number"></div><div class="row"><label>Fett (g)</label><input id="of" type="number"></div><div class="mut">Värdena gäller 1 portion.</div><textarea id="og" placeholder="Ingredienser, separera med komma (t.ex. 150 g kyckling, 75 g ris)" style="margin-top:8px"></textarea><textarea id="os" placeholder="Gör så här – ett steg per rad (valfritt)"></textarea><button class="b" onclick="saveR()">Spara recept</button></div>`;
+function saveR(){const v=i=>document.getElementById(i).value,n=v("on").replace(/['"<>]/g,"").trim();if(!n||!(+v("op")||+v("oc")||+v("of")))return;own.push({n,t:+v("ot"),p:+v("op"),c:+v("oc"),f:+v("of"),g:v("og").split(",").map(x=>x.trim()).filter(Boolean),s:v("os")});sv("own",own);loadOwn();addR=false;V()}
+function bkE(){const o={};KEYS.forEach(k=>{const v=ld(k);if(v!==null)o[k]=v});const e=document.getElementById("bk");e.value=JSON.stringify(o);e.select();try{navigator.clipboard.writeText(e.value)}catch(x){}}
+function bkI(){try{const o=JSON.parse(document.getElementById("bk").value);KEYS.forEach(k=>{if(k in o)sv(k,o[k])});location.reload()}catch(x){document.getElementById("bk").value="Kunde inte läsa texten."}}
+function V(){let h="";if(ob){obV();return}
+if(rec){const r=R[rec.i],x=rec.x;
+h=`<button class="s" onclick="rec=null;V()">‹ Tillbaka</button><button class="s" onclick="tfav('${r.n}')">${fav[r.n]?"♥ Favorit":"♡ Favorit"}</button><button class="s" onclick="thid('${r.n}')">${hid[r.n]?"Visa igen":"🚫 Visa inte"}</button>${r.own?`<button class="s" onclick="delR(${r.i-BASE})">Ta bort</button>`:""}${pic(r,"big")}<h1>${r.n}</h1><div class="mut">${S[r.t]} · ${x} portion · ${Math.round(r.k*x)} kcal</div>${bar(r.p*x,r.c*x,r.f*x)}${mac(r.p*x,r.c*x,r.f*x)}<button class="b" style="margin-top:12px" onclick="logRec(${rec.i},${x})">+ Lägg till i dagboken</button><h2>Ingredienser</h2><div class="c"><ul>${r.g.map(g=>`<li>${sc(g,x)}</li>`).join("")}</ul></div><h2>Gör så här</h2><div class="c"><ol>${(r.st?r.st.split("\n").filter(Boolean):MT[r.m].split("|")).map(s=>`<li>${s}</li>`).join("")}</ol></div><p class="mut">Mängderna är skalade till din portion. Näringsvärdena är uppskattningar.</p>`}
+else if(tab=="home")h=home();
+else if(tab=="profil")h=`<h1>Din profil</h1><div class="c">${fld("Kön","sex",[["Man","Man"],["Kvinna","Kvinna"]])}${fld("Vikt (kg)","w")}${fld("Längd (cm)","h")}${fld("Ålder","a")}${fld("Aktivitet","act",[[1.2,"Stillasittande"],[1.375,"Lätt aktiv"],[1.55,"Måttligt aktiv"],[1.725,"Mycket aktiv"],[1.9,"Extremt aktiv"]])}${fld("Mål","goal",[[-500,"Gå ner i vikt"],[0,"Behålla vikten"],[300,"Bygga muskler"]])}${fld("Kost","diet",[["all","Allt"],["pesc","Utan kött"],["veg","Vegetarisk"],["nofish","Utan fisk och skaldjur"]])}${fld("Eget kalorimål (0 = auto)","kc")}${fld("Protein (g/kg)","prot")}${fld("Fett (% av kcal)","fat")}</div><div class="c" id="res">${res()}</div><p class="mut">Exempelvärden är ifyllda – byt ut dem mot dina egna. Kalorier räknas med Mifflin-St Jeor.</p><h2>Utseende</h2><div class="c"><div class="row"><label>Läge</label><select onchange="setTh(this.value)">${[["","Automatiskt"],["light","Ljust"],["dark","Mörkt"]].map(x=>`<option value="${x[0]}"${x[0]==(ld("th")||"")?" selected":""}>${x[1]}</option>`).join("")}</select></div></div><h2>Säkerhetskopia</h2><div class="c"><div class="mut">Din data finns bara på den här enheten. Tryck "Skapa kopia" och spara texten någonstans, eller klistra in en kopia och tryck "Återställ".</div><textarea id="bk" style="margin-top:8px"></textarea><button class="s" onclick="bkE()">Skapa kopia</button><button class="s" onclick="bkI()">Återställ</button></div><h2>Om appen</h2><div class="c mut">Macro Coach ger allmänna uppskattningar av kalorier och macros och är inte medicinsk rådgivning. Rådgör med läkare eller dietist vid sjukdom, graviditet, ätstörning eller om du är under 18. Näringsvärden i recept och livsmedel är grova uppskattningar. Din data sparas bara på den här enheten.</div>`;
+else if(tab=="idag"){day=day||newDay();const g=G();let t=[0,0,0,0];
+h=`<h1>Dagens mat</h1><button class="b" onclick="day=day.map((d,i)=>lk[i]?d:pick(i));V()">Slumpa ny dag</button>`;
+day.forEach((d,i)=>{const r=d.r,k=r.k*d.x,p=r.p*d.x,c=r.c*d.x,f=r.f*d.x;t[0]+=k;t[1]+=p;t[2]+=c;t[3]+=f;
+h+=`<div class="c"><div class="lnk" onclick="openR(${r.i},${d.x})">${pic(r)}<div class="mut">${S[i]}</div><div class="nm">${r.n} ›</div><div class="mut">${d.x} portion · ${Math.round(k)} kcal · tryck för recept</div></div>${bar(p,c,f)}${mac(p,c,f)}<button class="s" onclick="day[${i}]=pick(${i},day[${i}].r);V()">Byt rätt</button><button class="s" onclick="lk[${i}]=!lk[${i}];V()">${lk[i]?"🔒 Låst":"🔓 Lås"}</button><button class="s" onclick="eat(${i})">${tl().m[i]?"✓ Ätit":"Åt detta"}</button></div>`});
+h+=`<div class="c"><div class="mut">Totalt idag</div><div class="nm">${Math.round(t[0])} av ${Math.round(g.k)} kcal</div>${bar(t[1],t[2],t[3])}${mac(t[1],t[2],t[3])}<div class="mut" style="margin-top:6px">Mål: ${Math.round(g.p)} g protein · ${Math.round(g.c)} g kolh. · ${Math.round(g.f)} g fett</div></div>`+eaten(g)+water()+`<button class="s" onclick="shareDay()">📤 Dela dagens meny</button>`}
+else if(tab=="vecka"){week=week||[0,1,2,3,4,5,6].map(newDay);const D=["Måndag","Tisdag","Onsdag","Torsdag","Fredag","Lördag","Söndag"];
+h=`<h1>${wsub=="meny"?"Veckomeny":"Inköpslista"}</h1><div class="chips"><button class="${wsub=="meny"?"on":""}" onclick="wsub='meny';V()">Meny</button><button class="${wsub=="ink"?"on":""}" onclick="wsub='ink';V()">Inköpslista</button></div>`;
+if(wsub=="ink")h+=shop();else{h+=`<button class="b" onclick="week=null;V()">Slumpa ny vecka</button>`;week.forEach((d,j)=>{h+=`<div class="c"><div class="nm">${D[j]}</div>`+d.map((m,i)=>`<div class="wk lnk" onclick="openR(${m.r.i},${m.x})"><b>${S[i]}</b>${em(m.r.n)} ${m.r.n} (${m.x}×) ›</div>`).join("")+`</div>`})}}
+else if(tab=="rec"){h=`<h1>Alla recept</h1><button class="b" onclick="addR=!addR;V()">${addR?"Stäng":"+ Eget recept"}</button>${addR?rform():""}`;S.forEach((s,t)=>{h+=`<h2>${s}</h2>`+R.filter(r=>r.t==t).map(r=>`<div class="c r2" onclick="openR(${r.i},1)"><span class="em">${em(r.n)}</span><span><b>${fav[r.n]?"♥ ":""}${hid[r.n]?"🚫 ":""}${r.n}</b><br><span class="mut">${r.k} kcal · P ${r.p} · K ${r.c} · F ${r.f}</span></span></div>`).join("")})}
+else if(tab=="fram")h=`<h1>Logg</h1><div class="chips">${[["dag","Dagbok"],["utv","Utveckling"],["sty","Styrka"],["vikt","Vikt"]].map(x=>`<button class="${x[0]==fsub?"on":""}" onclick="fsub='${x[0]}';V()">${x[1]}</button>`).join("")}</div>`+(fsub=="dag"?diary():fsub=="utv"?utv():fsub=="sty"?sty():fram());
+else{h=`<h1>Träning</h1><select style="width:100%" onchange="setP(this.value)">${Object.keys(P).map(k=>`<option${k==prog?" selected":""}>${k}</option>`).join("")}</select><p class="mut">${P[prog][0]}</p><div class="c"><div class="mut">Vilotimer</div><div class="nm" id="tm" style="font-size:30px">–</div><div class="chips" style="margin:6px 0 0">${[60,90,120,180].map(n=>`<button onclick="rest(${n})">${n} s</button>`).join("")}</div></div><div class="chips">${P[prog].slice(1).map(k=>`<button class="${k==tday?"on":""}" onclick="tday='${k}';V()">${k}</button>`).join("")}</div>`;
+const ex=X[tday].split(";"),ts=ex.reduce((u,e)=>u+ +e.split("|")[1],0),dn=ex.reduce((u,e,i)=>u+[...Array(+e.split("|")[1])].filter((_,j)=>sd[sk(tday+i,j)]).length,0);h+=`<div class="c"><div class="nm">${dn} av ${ts} set klara${dn==ts?" – pass klart! 💪":""}</div><div class="bar" style="height:12px"><span style="width:${100*dn/ts}%;background:var(--ac)"></span></div></div>`;
+ex.forEach((e,i)=>{const a=e.split("|"),key=tday+i,nm=a[0],lp=lastSets(nm);h+=`<div class="c"><div class="nm">${nm}</div><div class="mut">${a[1]} set × ${a[2]} reps${lp.length?" · förra: "+lp.map(x=>x.kg+"×"+x.r).join(", "):""}</div>${badge(nm)}${[...Array(+a[1])].map((_,j)=>{const v=gs(nm,j),pl=lp[j]||lp[lp.length-1]||{};return`<div class="st"><span class="mut">Set ${j+1}</span><input type="number" inputmode="decimal" placeholder="${pl.kg||"kg"}" value="${v.kg||""}" onchange="setSet('${nm}',${j},'kg',this.value,'${key}')"><span class="mut">kg ×</span><input type="number" inputmode="numeric" placeholder="${pl.r||"reps"}" value="${v.r||""}" onchange="setSet('${nm}',${j},'r',this.value,'${key}')"><input type="checkbox" ${sd[sk(key,j)]?"checked":""} onchange="tsd('${sk(key,j)}',this.checked)"></div>`}).join("")}<a class="s" href="${yt(nm)}" target="_blank" rel="noopener">▶ Visa hur</a></div>`});
+h+=`<p class="mut">Skriv in vikten du använde – den sparas i din webbläsare. "Visa hur" öppnar videor på YouTube.</p>`}
+document.getElementById("v").innerHTML=h;
+document.getElementById("n").innerHTML=[["home","🏠 Hem"],["idag","🍽️ Idag"],["vecka","📅 Vecka"],["tran","💪 Träning"],["rec","📖 Recept"],["fram","📈 Logg"],["profil","👤 Profil"]].map(a=>`<button class="${!rec&&a[0]==tab?"on":""}" onclick="tab='${a[0]}';rec=null;V();scrollTo(0,0)">${a[1].replace(" ","<br>")}</button>`).join("")}
+V();
+</script>
+</body>
+</html>

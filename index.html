@@ -50,6 +50,14 @@ textarea{width:100%;font:inherit;padding:9px;border-radius:10px;border:1px solid
 input[type=checkbox]{width:26px;height:26px;flex:none}.sets{display:flex;gap:8px;margin:6px 0}
 .st{display:flex;align-items:center;gap:8px;margin:6px 0}.st input[type=number]{width:72px}
 .tag{display:inline-block;border-radius:20px;padding:3px 10px;font-size:12px;font-weight:700;margin-right:6px}.up{background:rgba(34,197,94,.18);color:#16a34a}.pr{background:rgba(245,158,11,.2);color:#d97706}
+nav button{font-size:11px;padding:8px 0 6px}nav button b{display:block;font-size:21px;line-height:1.15;font-weight:400}nav button.on{box-shadow:inset 0 3px 0 var(--ac)}
+.hero{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border-radius:20px;padding:16px;margin-bottom:12px}.hero .mut{color:rgba(255,255,255,.9)}
+.xp{height:10px;border-radius:5px;background:rgba(255,255,255,.3);overflow:hidden;margin:10px 0 4px}.xp span{display:block;height:100%;background:#fff;border-radius:5px}
+.dots{display:flex;gap:8px;margin:8px 0 0}.dots i{width:28px;height:28px;border-radius:50%;border:2px solid var(--bd);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:14px}.dots i.f{background:var(--ac);border-color:var(--ac);color:#fff}
+.bg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}.bg div{text-align:center;padding:12px 6px;border-radius:14px;background:var(--card);border:1px solid var(--bd);font-size:12px}.bg div b{display:block;font-size:32px;font-weight:400}.bg .lk{opacity:.4;filter:grayscale(1)}
+.toast{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(20,10,40,.55);z-index:9}.toast>div{background:var(--card);border-radius:22px;padding:26px;text-align:center;max-width:300px;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.cf{position:fixed;top:-20px;width:10px;height:14px;z-index:10;animation:fall 2.4s ease-in forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+@media (prefers-reduced-motion:reduce){.cf{display:none}}
 </style>
 </head>
 <body>
@@ -117,7 +125,69 @@ Hummus med knäckebröd och grönsaker|3|9|30|17
 Banan med jordnötssmör och riskakor|3|11|55|17
 Müsliyoghurt med frukt|3|19|66|10
 Ostmacka med äpple|3|16|54|13
-Mandlar och torkad frukt|3|9|35|22`.split("\n").map(l=>{const a=l.split("|"),p=+a[2],c=+a[3],f=+a[4];return{n:a[0],t:+a[1],p,c,f,k:4*p+4*c+9*f}});
+Mandlar och torkad frukt|3|9|35|22
+Bacon och ägg med rostat bröd|0|32|33|30
+Chiapudding med bär och yoghurt|0|28|29|15
+Smoothiebowl med bär och granola|0|36|67|8
+Banan-havrepannkakor|0|23|59|15
+Tortilla med ägg och ost|0|28|35|24
+Frukostburrito med ägg och bönor|0|33|52|21
+Äggmuffins med skinka och ost|0|34|6|25
+Fruktyoghurt med nötter och honung|0|24|37|14
+Kycklingsoppa med grönsaker|1|40|55|5
+Laxfilé med couscous|1|37|56|31
+Tonfisksallad med bönor|1|37|25|4
+Burrito bowl med nötfärs|1|47|84|23
+Vegetarisk chili med bönor|1|20|78|4
+Kycklingbitar med ugnspotatis|1|42|51|17
+Omelett med skinka och potatis|1|29|27|17
+Pastasallad med tonfisk|1|41|66|7
+Kycklingcurry med ris|2|45|66|22
+Laxpasta med spenat|2|38|65|33
+Biff stroganoff med ris|2|41|70|27
+Torsk i ugn med grönsaker|2|41|50|17
+Kalkonwok med nudlar|2|44|68|11
+Röd linsgryta med ris|2|29|104|4
+Laxwok med ris|2|39|73|21
+Pasta med kyckling och pesto|2|52|82|19
+Fläskfilé med ugnspotatis och sås|2|45|55|9
+Tofupytt med stekt ägg|2|36|48|22
+Proteinpudding med bär|3|36|12|2
+Banan med kvarg|3|25|31|1
+Macka med keso och tomat|3|21|38|7
+Grönsakssmoothie med protein|3|37|40|7
+Grekisk yoghurt med bär och nötter|3|24|17|15
+Riskakor med keso och gurka|3|16|29|5
+Gröt med blåbär och kvarg|0|30|60|9
+Fruktsmoothie med havre|0|25|65|9
+Ägg och rökt lax på bröd|0|24|33|12
+Kvarg med müsli och banan|0|35|59|3
+Äggröra-wrap med skinka|0|32|35|22
+Keso med bär och müsli|0|35|44|12
+Jordnötsgröt med banan|0|23|75|16
+Grekisk yoghurt med banan och nötter|0|30|36|15
+Tonfiskwrap med majs|1|36|48|12
+Räksallad med quinoa och avokado|1|38|55|14
+Köttbullar med pasta och tomatsås|1|37|72|20
+Quinoabowl med kyckling och avokado|1|45|54|15
+Spenatomelett med ost och bröd|1|36|34|27
+Röd curry med tofu och ris|1|26|68|29
+Stekt lax med potatis och gurkröra|1|30|44|20
+Gulaschsoppa med potatis|1|40|60|11
+Ugnsrostad kyckling med sötpotatis och broccoli|2|47|56|18
+Wok med nötkött och ris|2|39|72|11
+Kalkonfärssås med pasta|2|43|70|13
+Fiskpinnar med ugnspotatis och ärtor|2|28|78|15
+Vegetarisk pastagryta med bönor|2|24|95|3
+Kyckling tikka masala med ris|2|51|77|20
+Köttfärsgryta med bönor och ris|2|47|91|16
+Laxsoppa med potatis|2|31|46|31
+Kvarg med honung och nötter|3|28|26|11
+Chokladshake med banan|3|36|41|8
+Ost med frukt|3|11|14|11
+Macka med jordnötssmör och banan|3|13|57|10
+Kokta ägg med avokado|3|17|22|19
+Skinka och ost med gurka|3|19|2|11`.split("\n").map(l=>{const a=l.split("|"),p=+a[2],c=+a[3],f=+a[4];return{n:a[0],t:+a[1],p,c,f,k:4*p+4*c+9*f}});
 const S=["Frukost","Lunch","Middag","Mellanmål"],SH=[.25,.3,.3,.15];
 const X={"Överkropp A":"Bänkpress|4|6–8;Hantelrodd|4|8–10;Axelpress med hantlar|3|8–10;Latsdrag|3|10–12;Triceps pushdown|3|10–12;Bicepscurl|3|10–12",
 "Underkropp A":"Knäböj|4|6–8;Rumänsk marklyft|3|8–10;Benpress|3|10–12;Utfall|3|10 per ben;Vadpress|4|12–15;Planka|3|45 sek",
@@ -137,19 +207,20 @@ const P={"Helkropp 3 dagar":["Förslag: måndag, onsdag, fredag. Vila minst en d
 "5-dagars split":["Förslag: måndag till fredag, helg vila.","Bröst","Rygg","Ben","Axlar","Armar"]};
 const E=[[/smoothie|shake/,"🥤"],[/pannkak|våffl/,"🥞"],[/lax|torsk|tonfisk/,"🐟"],[/räk/,"🍤"],[/kyckling|kalkon/,"🍗"],[/biff|fläsk|nötfärs|nötgryta|köttbull|falukorv|bacon/,"🥩"],[/pasta|spaghetti|carbonara|lasagne/,"🍝"],[/wok|nudlar/,"🍜"],[/soppa/,"🍲"],[/curry|chili|gryta|bibimbap/,"🍛"],[/wrap|taco/,"🌮"],[/burgare/,"🍔"],[/sallad|bowl/,"🥗"],[/ägg|omelett/,"🍳"],[/toast|macka|smörgås|knäcke|riskak/,"🥪"],[/gröt|oats/,"🥣"],[/yoghurt|kvarg|keso|filmjölk/,"🥛"],[/nötter|mandel/,"🥜"],[/äpple|frukt|banan|bär/,"🍓"],[/hummus|falafel/,"🧆"],[/bar$/,"🍫"]];
 const em=n=>{n=n.toLowerCase();for(const[r,e]of E)if(r.test(n))return e;return"🍽️"};
-const MT={a:"Mät upp ingredienserna.|Varva eller blanda i en skål eller ett glas.|Toppa med bär, nötter eller frukt och servera direkt.",
-b:"Koka upp havre och vätska under omrörning i 3–5 minuter. För overnight oats: blanda och ställ i kylen över natten.|Rör ner proteinpulver och/eller frukt.|Toppa med bär eller nötter.",
-c:"Hacka grönsakerna och krydda proteinet med salt och peppar.|Hetta upp lite olja i en stekpanna på medelvärme och stek tills allt är genomstekt.|Koka tillbehören (ris, potatis, quinoa m.m.) enligt förpackningen.|Lägg upp och servera.",
-d:"Sätt ugnen på 200 °C.|Lägg ingredienserna på en plåt, ringla över olja och krydda.|Grädda 20–30 minuter tills allt är klart (fågel minst 75 °C inuti).|Servera med tillbehör.",
-e:"Koka ris eller nudlar enligt förpackningen.|Stek proteinet i het panna eller wok 4–6 minuter och lyft ur.|Woka grönsakerna 3–4 minuter, lägg tillbaka proteinet och tillsätt sås.|Servera över ris eller nudlar.",
-f:"Fräs lök och vitlök i lite olja.|Tillsätt protein/baljväxter och krydda.|Häll på vätska (buljong, tomat eller kokosmjölk) och låt sjuda 15–25 minuter.|Koka tillbehör och servera.",
-g:"Koka pastan enligt förpackningen.|Stek proteinet med vitlök och tillsätt sås eller grädde.|Blanda med pastan och servera.",
-h:"Förbered pålägg och grönsaker.|Bygg smörgåsen eller rulla wrapen.|Servera direkt.",
-i:"Lägg alla ingredienser i en blender.|Mixa till slät konsistens.|Häll upp och drick direkt.",
-j:"Vispa äggen med salt och peppar, hacka grönsaker.|Stek på medelvärme i lite smör eller olja.|Servera med tillbehören.",
-k:"Mixa eller vispa ihop smeten.|Stek i panna eller grädda i våffeljärn tills gyllene.|Toppa med kvarg och bär.",
-l:"Inget tillagning behövs – servera direkt.",
-m:"Koka äggen 8–9 minuter.|Kyl i kallt vatten och skala.|Servera med knäckebröd."};
+const MT={a:"Mät upp {A}.|Lägg basen (yoghurt, kvarg, keso eller filmjölk) i en skål eller ett glas.|Tillsätt resten av ingredienserna, gärna i lager.|Toppa med bär, nötter eller frukt och servera direkt.",
+b:"Mät upp {A}.|Gröt: koka upp havregryn och vätska under omrörning i 3–5 minuter. Overnight oats: blanda allt i en burk och ställ i kylen över natten.|Rör ner proteinpulver och frukt när gröten svalnat något.|Toppa med bär eller nötter och servera.",
+c:"Förbered: skölj och skär {V}. Ta fram {P}.|Krydda {P} med salt och peppar.|Koka {C} enligt förpackningen.|Hetta upp lite olja i en stekpanna på medelvärme och stek {P} i 5–8 minuter tills genomstekt (fågel och fläsk minst 75 °C inuti).|Tillsätt {V} de sista 3–4 minuterna.|Lägg upp {C} och {P} på tallriken, smaka av med salt och peppar och servera.",
+d:"Sätt ugnen på 200 °C.|Skär {C} i jämnstora bitar, lägg på en plåt, ringla över lite olja och krydda.|Lägg {P} på plåten och krydda.|Grädda 20–30 minuter tills allt är klart (fågel minst 75 °C inuti). Vänd gärna efter halva tiden.|Servera med {V}.",
+e:"Koka {C} enligt förpackningen.|Skär {P} i bitar och stek i het panna eller wok 4–6 minuter. Lyft ur.|Woka {V} i 3–4 minuter.|Lägg tillbaka {P}, tillsätt sås och värm 1–2 minuter.|Servera över {C}.",
+f:"Hacka lök och vitlök och fräs i lite olja 2–3 minuter.|Tillsätt {P} och krydda. Fräs 3–5 minuter.|Häll på vätska (buljong, tomat eller kokosmjölk) och tillsätt {V}. Låt sjuda 15–25 minuter under lock.|Koka {C} under tiden.|Smaka av med salt och peppar och servera.",
+g:"Koka {C} enligt förpackningen och spara en kopp av kokvattnet.|Stek {P} med vitlök i 5–8 minuter.|Tillsätt sås, grädde eller {V} och låt sjuda 2–3 minuter. Späd med kokvatten vid behov.|Blanda med pastan och servera direkt.",
+h:"Ta fram {A}.|Skiva eller hacka grönsakerna.|Bygg smörgåsen eller rulla wrapen: bas först, sedan {P}, sist grönsaker.|Servera direkt.",
+i:"Lägg {A} i en blender, med vätskan först.|Mixa 30–60 sekunder tills det är slätt.|Smaka av och tillsätt mer vätska om det är för tjockt.|Häll upp och drick direkt.",
+j:"Vispa äggen med salt och peppar. Hacka {V}.|Hetta upp smör eller olja i en stekpanna på medelvärme.|Stek {V} i 2 minuter, häll i äggen och rör försiktigt tills de stelnat.|Servera med {C}.",
+k:"Mixa eller vispa ihop smeten av {A}.|Hetta upp en lätt oljad panna eller ett våffeljärn.|Stek 2–3 minuter per sida tills gyllene.|Toppa med kvarg och bär.",
+l:"Ingen tillagning behövs.|Ta fram {A} och servera direkt.",
+m:"Lägg äggen i kokande vatten och koka 8–9 minuter.|Kyl i kallt vatten och skala.|Servera med {C}."},
+TM={a:5,b:10,c:30,d:40,e:25,f:40,g:25,h:5,i:5,j:10,k:15,l:2,m:12};
 const I=`b|60 g havregryn;3 dl mjölk;1 banan
 a|250 g grekisk yoghurt;40 g müsli;50 g bär
 j|3 ägg;2 skivor bröd;5 g smör
@@ -211,22 +282,148 @@ l|100 g hummus;3 knäckebröd;grönsaksstavar
 h|1 banan;2 msk jordnötssmör;3 riskakor
 a|250 g yoghurt;50 g müsli;1 frukt
 h|2 skivor bröd;40 g ost;1 äpple
-l|40 g mandlar;40 g torkad frukt`.split("\n");
+l|40 g mandlar;40 g torkad frukt
+j|3 ägg;40 g bacon;2 skivor bröd
+a|3 msk chiafrön;2 dl mjölk;150 g yoghurt;80 g bär
+i|1 scoop proteinpulver;1 banan;100 g bär;2 dl mjölk;30 g granola
+k|1 banan;2 ägg;50 g havregryn;1 dl mjölk
+j|1 stor tortilla;2 ägg;30 g ost;grönsaker
+j|1 stor tortilla;3 ägg;100 g svarta bönor
+j|3 ägg;40 g skinka;30 g ost;grönsaker
+a|200 g grekisk yoghurt;100 g frukt;20 g nötter;1 msk honung
+f|150 g kyckling;250 g potatis;150 g rotfrukter;1 lök;4 dl buljong
+c|120 g lax;70 g couscous;150 g broccoli;1 msk olivolja
+s|1 burk tonfisk;100 g vita bönor;grönsaker;citron
+c|120 g nötfärs;75 g ris;100 g svarta bönor;majs;30 g ost
+f|100 g bönor;1 burk krossade tomater;60 g ris;1 lök;paprika
+d|150 g kyckling;250 g potatis;grönsaker;1 msk olivolja
+j|3 ägg;150 g potatis;40 g skinka
+s|80 g pasta;1 burk tonfisk;grönsaker;1 msk crème fraiche
+f|170 g kyckling;1 dl kokosmjölk;80 g ris;currypasta;1 lök
+g|120 g lax;85 g pasta;1 dl grädde;50 g spenat
+f|150 g nötkött;80 g ris;1 lök;1 dl grädde;100 g champinjoner
+d|180 g torsk;250 g potatis;150 g broccoli;1 msk olivolja
+e|150 g kalkonfärs;80 g nudlar;wokgrönsaker;sojasås
+f|80 g röda linser;1 burk krossade tomater;60 g ris;1 lök;morot
+e|150 g lax;80 g ris;wokgrönsaker;sojasås
+g|100 g pasta;150 g kyckling;2 msk pesto;grönsaker
+d|170 g fläskfilé;250 g potatis;sås;grönsaker
+c|250 g potatis;150 g tofu;1 lök;2 ägg
+a|100 g kvarg;1 scoop proteinpulver;50 g bär
+a|200 g kvarg;1 banan
+h|2 skivor bröd;100 g keso;tomat
+i|1 scoop proteinpulver;1 banan;50 g spenat;3 dl mjölk
+a|200 g grekisk yoghurt;50 g bär;20 g nötter
+h|3 riskakor;100 g keso;gurka
+b|60 g havregryn;3 dl mjölk;100 g kvarg;50 g bär
+i|1 banan;50 g bär;30 g havregryn;3 dl mjölk;100 g yoghurt
+m|1 ägg;50 g rökt lax;2 skivor bröd
+a|250 g kvarg;40 g müsli;1 banan
+j|1 stor tortilla;3 ägg;40 g skinka;grönsaker
+a|250 g keso;80 g bär;40 g müsli
+b|60 g havregryn;3 dl mjölk;1 banan;1 msk jordnötssmör
+a|250 g grekisk yoghurt;1 banan;20 g nötter
+h|1 stor tortilla;1 burk tonfisk;majs;grönsaker;2 msk crème fraiche
+s|150 g räkor;70 g quinoa;1/2 avokado;gurka;tomat
+g|6 köttbullar;85 g pasta;100 g tomatsås
+c|150 g kyckling;70 g quinoa;1/2 avokado;grönsaker
+j|3 ägg;50 g spenat;30 g ost;2 skivor bröd
+f|150 g tofu;1 dl kokosmjölk;75 g ris;currypasta;1 lök;paprika
+c|120 g lax;250 g potatis;gurka;1 msk crème fraiche
+f|150 g nötkött;250 g potatis;1 lök;paprika;1 burk krossade tomater
+d|170 g kyckling;250 g sötpotatis;150 g broccoli;1 msk olivolja
+e|150 g nötkött;80 g ris;wokgrönsaker;sojasås
+g|150 g kalkonfärs;85 g pasta;100 g tomatsås;vitlök
+d|6 fiskpinnar;250 g potatis;100 g ärtor;sås
+f|100 g bönor;85 g pasta;1 burk krossade tomater;1 lök;paprika
+f|170 g kyckling;1 dl grädde;1 burk krossade tomater;80 g ris;currypasta;1 lök
+f|150 g nötfärs;100 g bönor;1 burk krossade tomater;80 g ris;1 lök
+f|120 g lax;250 g potatis;2 dl buljong;1 dl grädde;1 lök;dill
+a|200 g kvarg;1 msk honung;20 g nötter
+i|1 scoop proteinpulver;1 banan;1 msk kakao;3 dl mjölk
+l|40 g ost;100 g frukt
+h|2 skivor bröd;1 msk jordnötssmör;1 banan
+m|2 ägg;1/2 avokado;3 knäckebröd
+l|60 g skinka;30 g ost;gurka`.split("\n");
 R.forEach((r,i)=>{const q=I[i].split("|");r.i=i;r.m=q[0];r.g=q[1].split(";")});
 const ld=k=>{try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}};
 const sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
-const KEYS=["st","prog","kg","wl","buy","own","fav","hid","log","wat","kh","sd","th","sw"];
+const KEYS=["st","prog","kg","wl","buy","own","fav","hid","log","wat","kh","sd","th","sw","pd","stp","bd","cp","xo","ch","bm","pf","mm","xa"];
 const BASE=R.length;let own=ld("own")||[],fav=ld("fav")||{},hid=ld("hid")||{},log=ld("log")||{},wat=ld("wat")||{},addR=false,kh=ld("kh")||{},sd=ld("sd")||{},sw=ld("sw")||{};const th0=ld("th");if(th0)document.documentElement.setAttribute("data-theme",th0);
-MT.own="Inga steg angivna.";
+MT.own="Inga steg angivna.";MT.s="Skölj och skär {V}.|Koka {C} om det behövs och låt det svalna.|Blanda allt i en stor skål med {P}.|Ringla över olja eller citron, smaka av med salt och peppar och servera.";TM.s=10;
+E.unshift([/fiskpinn/,"🐟"],[/burrito|tortilla|wrap/,"🌯"],[/pudding|chia/,"🍮"]);
 function loadOwn(){R.length=BASE;own.forEach(o=>{const p=+o.p,c=+o.c,f=+o.f;R.push({n:o.n,t:+o.t,p,c,f,k:4*p+4*c+9*f,m:"own",g:o.g,st:o.s,i:R.length,own:1})})}loadOwn();
 const TD=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
 const saved=ld("st");
+const EXD=`Bröst|Bänkpress
+Bröst|Lutande hantelpress
+Bröst|Armhävningar
+Bröst|Kabelflyes
+Bröst|Hantelflyes
+Bröst|Dips
+Bröst|Pec deck
+Rygg|Latsdrag
+Rygg|Hantelrodd
+Rygg|Sittande rodd
+Rygg|Marklyft
+Rygg|Face pulls
+Rygg|Chins
+Rygg|Skivstångsrodd
+Rygg|Raka armar pulldown
+Ben|Knäböj
+Ben|Rumänsk marklyft
+Ben|Benpress
+Ben|Utfall
+Ben|Höftlyft
+Ben|Bencurl
+Ben|Vadpress
+Ben|Bulgarisk split squat
+Ben|Goblet squat
+Ben|Benspark
+Axlar|Axelpress med hantlar
+Axlar|Sidolyft
+Axlar|Axelpress med skivstång
+Axlar|Bakre axlar med hantlar
+Axlar|Upprätt rodd
+Axlar|Arnoldpress
+Armar|Bicepscurl
+Armar|Triceps pushdown
+Armar|Hammercurl
+Armar|Franskt pressa
+Armar|Koncentrationscurl
+Armar|Triceps över huvudet
+Armar|Skullcrushers
+Mage|Planka
+Mage|Magrullar
+Mage|Hängande benlyft
+Mage|Rysk twist
+Mage|Sidoplanka
+Mage|Cykelcrunch
+Mage|Bergsklättrare
+Ben|Knäböj med kroppsvikt
+Ben|Glute bridge
+Ben|Step-ups
+Axlar|Pike push-ups
+Armar|Dips på stol
+Rygg|Superman
+Rygg|Handduksrodd`.split("\n").map(l=>l.split("|"));
+const EG=["Bröst","Rygg","Ben","Axlar","Armar","Mage"],exBy=g=>EXD.filter(e=>e[0]==g).map(e=>e[1]);
+const dr=n=>/Planka/i.test(n)?"3|45 sek":/Bänkpress|Knäböj|Marklyft|Axelpress|rodd|Latsdrag|Benpress|Chins|Dips/.test(n)?"3|6–10":"3|10–12";
+function gen(d,min,pre){const n=Math.max(2,Math.min(7,Math.round(min/9))),F=["Ben","Bröst","Rygg","Axlar","Mage","Armar","Ben"],U=["Bröst","Rygg","Axlar","Rygg","Armar","Bröst","Armar"],L=["Ben","Ben","Ben","Mage","Ben","Ben","Mage"],PU=["Bröst","Axlar","Bröst","Armar","Axlar","Armar","Bröst"],PL=["Rygg","Rygg","Armar","Axlar","Rygg","Armar","Mage"],one=g=>Array(7).fill(g),
+pl={2:[["Helkropp",F],["Helkropp",F]],3:[["Helkropp",F],["Helkropp",F],["Helkropp",F]],4:[["Överkropp",U],["Underkropp",L],["Överkropp",U],["Underkropp",L]],5:["Bröst","Rygg","Ben","Axlar","Armar"].map(g=>[g,one(g)]),6:[["Push",PU],["Pull",PL],["Ben",L],["Push",PU],["Pull",PL],["Ben",L]]}[d],names=[],sess={};
+pl.forEach((q,s)=>{const used=[],nm=pre+" "+(s+1)+" "+q[0];q[1].slice(0,n).forEach(g=>{const pool=exBy(g),o=(s*2)%pool.length,c=pool.slice(o).concat(pool.slice(0,o)).find(x=>!used.includes(x));if(c)used.push(c)});names.push(nm);sess[nm]=used.map(x=>x+"|"+dr(x)).join(";")});return{names,sess}}
+[["Korta pass 4 dagar (~30 min)",4,30,"Kort","Förslag: måndag, tisdag, torsdag, fredag."],["Snabba pass 3 dagar (~25 min)",3,25,"Snabb","Förslag: måndag, onsdag, fredag."]].forEach(a=>{const r=gen(a[1],a[2],a[3]);P[a[0]]=["Korta pass med några få övningar. "+a[4],...r.names];Object.assign(X,r.sess)});
+Object.assign(X,{"Hemma A":"Knäböj med kroppsvikt|4|15;Armhävningar|4|max;Glute bridge|3|15;Utfall|3|10 per ben;Planka|3|45 sek;Bergsklättrare|3|30 sek","Hemma B":"Pike push-ups|3|8–10;Dips på stol|3|10–12;Superman|3|12;Step-ups|3|10 per ben;Sidoplanka|3|30 sek;Cykelcrunch|3|20","Hemma C":"Bulgarisk split squat|3|10 per ben;Armhävningar|3|max;Handduksrodd|3|12;Glute bridge|3|15;Rysk twist|3|20"});
+P["Hemma 3 dagar (utan redskap)"]=["Utan redskap: du behöver bara kroppsvikt, en stol och en handduk. Förslag: måndag, onsdag, fredag.","Hemma A","Hemma B","Hemma C"];
+const X0=Object.assign({},X);let cp=ld("cp"),xo=ld("xo")||{},edt=false,smo=false,agrp="Bröst";
+function applyCp(){if(cp&&cp.n){P[cp.n]=["Ditt schema: "+cp.names.length+" pass per vecka. Ändra övningarna med ✏️ Ändra pass.",...cp.names];Object.assign(X,cp.sess)}Object.assign(X,xo)}applyCp();
+
 let st=Object.assign({sex:"Man",w:80,h:180,a:30,act:1.55,goal:0,prot:1.8,fat:25,diet:"all",kc:0},saved);
 let prog=ld("prog");if(!P[prog])prog="Upper/Lower 4 dagar";
 let tab="home",ob=saved?0:1,lk=[],day=null,week=null,rec=null,tday=P[prog][1],kg=ld("kg")||{},wsub="meny",wl=ld("wl")||[],buy=ld("buy")||{};
 const rnd=a=>a[Math.floor(Math.random()*a.length)];
-function G(){const b=10*st.w+6.25*st.h-5*st.a+(st.sex=="Man"?5:-161),k=st.kc>0?st.kc:b*st.act+st.goal,p=st.prot*st.w,f=k*st.fat/900;return{k,p,f,c:Math.max(0,(k-4*p-9*f)/4)}}
-const MEAT=/kyckling|kalkon|nötfärs|nötkött|biff|fläsk|falukorv|bacon|köttbull|skinka/i,FISH=/lax|torsk|tonfisk|räk/i;
+function G(){const b=10*st.w+6.25*st.h-5*st.a+(st.sex=="Man"?5:-161),k=st.kc>0?st.kc:Math.max(st.sex=="Man"?1500:1200,(st.cm=="act"?b*st.act:typ().tot)+st.goal),p=st.prot*st.w,f=k*st.fat/900;return{k,p,f,c:Math.max(0,(k-4*p-9*f)/4)}}
+const MEAT=/kyckling|kalkon|nötfärs|nötkött|biff|fläsk|falukorv|bacon|köttbull|skinka/i,FISH=/lax|torsk|tonfisk|räk|fisk/i;
 const okD=r=>{const t=r.n+" "+r.g.join(" "),m=MEAT.test(t),f=FISH.test(t),d=st.diet;return d=="veg"?!m&&!f:d=="pesc"?!m:d=="nofish"?!f:true};
 const pl=i=>{const a=R.filter(r=>r.t==i&&okD(r)&&!hid[r.n]);return a.length?a:R.filter(r=>r.t==i)};
 let ti=null,tend=0;
@@ -234,15 +431,15 @@ function tick(){const e=document.getElementById("tm"),l=Math.ceil((tend-Date.now
 function rest(n){clearInterval(ti);tend=Date.now()+n*1000;tick();ti=setInterval(tick,250)}
 function pick(i,ex){const g=G(),k=g.k*SH[i],p=g.p*SH[i],c=g.c*SH[i],f=g.f*SH[i],pool=pl(i);
 for(const tol of[.4,.5,.6,.8,1.2]){let m=pool.filter(r=>{const x=k/r.k;return x>=.5&&x<=3&&Math.abs(r.p*x-p)<=tol*p&&Math.abs(r.c*x-c)<=tol*c&&Math.abs(r.f*x-f)<=tol*f});
-if(m.length>1&&ex)m=m.filter(r=>r!==ex);m=m.concat(m.filter(r=>fav[r.n]),m.filter(r=>fav[r.n]));if(m.length)return mk(rnd(m),k)}
-return mk(rnd(pool),k)}
+if(m.length>1&&ex)m=m.filter(r=>r!==ex);m=bf(m,k,i);m=m.concat(m.filter(r=>fav[r.n]),m.filter(r=>fav[r.n]));if(m.length)return mk(rnd(m),k)}
+return mk(rnd(bp(pool,k,i)),k)}
 const mk=(r,k)=>({r,x:Math.max(.25,Math.round(k/r.k*4)/4)});
 const newDay=()=>[0,1,2,3].map(i=>pick(i));
 const bar=(p,c,f)=>{const t=4*p+4*c+9*f||1;return`<div class="bar"><span style="width:${400*p/t}%;background:var(--P)"></span><span style="width:${400*c/t}%;background:var(--C)"></span><span style="width:${900*f/t}%;background:var(--F)"></span></div>`};
 const mac=(p,c,f)=>`<div class="m"><span style="color:var(--P)">${Math.round(p)} g <i>protein</i></span><span style="color:var(--C)">${Math.round(c)} g <i>kolh.</i></span><span style="color:var(--F)">${Math.round(f)} g <i>fett</i></span></div>`;
 const res=()=>{const g=G();return`<div class="nm">${Math.round(g.k)} kcal per dag</div>${bar(g.p,g.c,g.f)}${mac(g.p,g.c,g.f)}`};
 function fld(l,k,o){const v=st[k];return`<div class="row"><label>${l}</label>`+(o?`<select onchange="up('${k}',this.value)">${o.map(x=>`<option value="${x[0]}"${x[0]==v?" selected":""}>${x[1]}</option>`).join("")}</select>`:`<input type="number" inputmode="decimal" value="${v}" onchange="up('${k}',this.value)">`)+`</div>`}
-function up(k,v){st[k]=k=="sex"||k=="diet"?v:+v;sv("st",st);day=null;week=null;const e=document.getElementById("res");if(e)e.innerHTML=res()}
+function up(k,v){st[k]=k=="sex"||k=="diet"||k=="cm"?v:+v;sv("st",st);day=null;week=null;const e=document.getElementById("res");if(e)e.innerHTML=res()}
 function sc(s,x){const m=s.match(/^(1\/2|1\/4|\d+(?:\.\d+)?)\s+(.*)$/);if(!m)return s;const n=m[1]=="1/2"?.5:m[1]=="1/4"?.25:+m[1];return String(+(n*x).toFixed(n*x>=10?0:2)).replace(".",",")+" "+m[2]}
 const openR=(i,x)=>{rec={i,x};V();scrollTo(0,0)};
 const yt=n=>"https://www.youtube.com/results?search_query="+encodeURIComponent(n+" övning teknik");
@@ -267,7 +464,7 @@ const sk=(k,j)=>TD()+"|"+k+"|"+j;
 const tv=n=>((kh[n]||[]).find(e=>e.d==TD())||{}).kg||"";
 const pv=n=>{const a=(kh[n]||[]).filter(e=>e.d<TD());return a.length?a[a.length-1].kg:""};
 const setKg=(n,v)=>{const t=TD();kh[n]=(kh[n]||[]).filter(e=>e.d!=t);if(v)kh[n].push({d:t,kg:v});sv("kh",kh)};
-const tsd=(k,v)=>{v?sd[k]=1:delete sd[k];sv("sd",sd);V()};
+const tsd=(k,v)=>{v?sd[k]=1:delete sd[k];sv("sd",sd);if(v)rest(90);V()};
 const OPT={sex:[["Man","Man"],["Kvinna","Kvinna"]],act:[[1.2,"Stillasittande"],[1.375,"Lätt aktiv"],[1.55,"Måttligt aktiv"],[1.725,"Mycket aktiv"],[1.9,"Extremt aktiv"]],goal:[[-500,"Gå ner i vikt"],[0,"Behålla vikten"],[300,"Bygga muskler"]],diet:[["all","Allt"],["pesc","Utan kött"],["veg","Vegetarisk"],["nofish","Utan fisk och skaldjur"]]};
 const obF=()=>{sv("st",st);ob=0;tab="home";V()};
 function obV(){let h=`<div class="mut" style="margin-top:12px">Steg ${ob} av 3</div>`;
@@ -276,9 +473,9 @@ if(ob==2)h+=`<h1>Din vardag och ditt mål</h1><div class="c">${fld("Aktivitet","
 if(ob==3)h+=`<h1>Din plan är klar 🎉</h1><div class="c" id="res">${res()}</div><div class="mut" style="margin:8px 0">Välj träningsprogram:</div><select style="width:100%" onchange="setP(this.value)">${Object.keys(P).map(k=>`<option${k==prog?" selected":""}>${k}</option>`).join("")}</select><p class="mut">${P[prog][0]}</p>`;
 h+=`<button class="b" onclick="ob==3?obF():(ob++,V())">${ob==3?"Visa min första dag":"Nästa"}</button>`+(ob>1?`<button class="s" onclick="ob--;V()">‹ Tillbaka</button>`:"");
 document.getElementById("v").innerHTML=h;document.getElementById("n").innerHTML="";scrollTo(0,0)}
-function todaySession(){const n=P[prog].length-1,i={3:[1,3,5],4:[1,2,4,5],5:[1,2,3,4,5]}[n].indexOf(new Date().getDay());return i<0?null:P[prog][1+i]}
-function home(){const g=G(),t=todaySession(),d=(day=day||newDay()),e=tl(),k=Object.values(e.m).concat(e.x).reduce((u,v)=>u+(v.k||0),0);
-return`<h1>Hej! 👋</h1><div class="mut" style="margin:-6px 0 10px">${new Date().toLocaleDateString("sv-SE",{weekday:"long",day:"numeric",month:"long"})}</div><div class="c"><div class="mut">Dagens pass</div>${t?`<div class="nm">${t}</div><div class="mut">${X[t].split(";").length} övningar</div><button class="b" style="margin:10px 0 0" onclick="tday='${t}';tab='tran';V()">Starta passet</button>`:`<div class="nm">Vilodag 😴</div><div class="mut">Ta en promenad och låt musklerna återhämta sig.</div>`}</div><div class="c"><div class="mut">Dagens mat</div>${d.map((m,i)=>`<div class="wk lnk" onclick="openR(${m.r.i},${m.x})"><b>${S[i]}</b>${em(m.r.n)} ${m.r.n} ›</div>`).join("")}<div class="mut" style="margin-top:8px">Ätit ${Math.round(k)} av ${Math.round(g.k)} kcal</div><div class="bar" style="height:12px"><span style="width:${Math.min(100,100*k/g.k)}%;background:var(--ac)"></span></div><button class="s" onclick="tab='idag';V()">Se hela dagen</button><button class="s" onclick="tab='fram';fsub='dag';dsel=TD();V()">📒 Dagbok</button></div>${water()}<p class="mut">Tips: lägg appen på hemskärmen via webbläsarens delningsmeny.</p>`}
+function todaySession(){const n=P[prog].length-1,i=({1:[3],2:[2,5],3:[1,3,5],4:[1,2,4,5],5:[1,2,3,4,5],6:[1,2,3,4,5,6]}[n]||[]).indexOf(new Date().getDay());return i<0?null:P[prog][1+i]}
+function home(){const g=G(),t=todaySession(),d=(day=day||newDay()),e=tl(),k=Object.values(e.m).concat(e.x).reduce((u,v)=>u+(v.k||0),0),n=passWk(),goal=P[prog].length-1,done=t&&pd[TD()+"|"+t];
+return`<h1>Hej! 👋</h1><div class="mut" style="margin:-6px 0 10px">${new Date().toLocaleDateString("sv-SE",{weekday:"long",day:"numeric",month:"long"})}</div>${heroH()}${chH()}<div class="c"><div class="mut">Dagens pass</div>${t?(done?`<div class="nm">${t}: klart! ✅</div><div class="mut">Bra jobbat. Ta igen dig och ät ordentligt.</div>`:`<div class="nm">${t}</div><div class="mut">${X[t].split(";").filter(Boolean).length} övningar · +100 XP när passet är klart</div><button class="b" style="margin:10px 0 0" onclick="tday='${t}';tab='tran';V();scrollTo(0,0)">Starta passet</button>`):`<div class="nm">Vilodag 😴</div><div class="mut">Ta en promenad och låt musklerna återhämta sig.</div>`}<div class="mut" style="margin-top:10px">Veckomål: ${n} av ${goal} pass</div><div class="dots">${[...Array(goal)].map((_,q)=>`<i class="${q<n?"f":""}">${q<n?"✓":""}</i>`).join("")}</div></div>${steps()}${burnS()}<div class="c"><div class="mut">Dagens mat</div>${d.map((m,i)=>`<div class="wk lnk" onclick="openR(${m.r.i},${m.x})"><b>${S[i]}</b>${em(m.r.n)} ${m.r.n} ›</div>`).join("")}<div class="mut" style="margin-top:8px">Ätit ${Math.round(k)} av ${Math.round(g.k)} kcal</div><div class="bar" style="height:12px"><span style="width:${Math.min(100,100*k/g.k)}%;background:var(--ac)"></span></div><button class="s" onclick="tab='idag';V()">Se hela dagen</button><button class="s" onclick="tab='fram';fsub='dag';dsel=TD();V()">📒 Dagbok</button></div>${water()}<p class="mut">Tips: lägg appen på hemskärmen via delningsmenyn i Safari.</p>`}
 const tlD=d=>log[d]=log[d]||{m:{},x:[]},tl=()=>tlD(TD());
 let fsub="dag",dsel=TD(),urng=7,rcL=[],ssel="";
 const swk=(n,j)=>TD()+"|"+n+"|"+j;
@@ -291,50 +488,338 @@ function sty(){const names=[...new Set(Object.keys(sw).map(k=>k.split("|")[1]))]
 if(!names.length)return`<p class="mut">Logga kg och reps för dina set under Träning, så ser du här hur du utvecklas och dina rekord.</p>`;
 if(!names.includes(ssel))ssel=names[0];const h=hist(ssel),n=h.length,mx=Math.max(...h.map(x=>x.max)),lo=Math.min(...h.map(x=>x.max))-2.5,hi=mx+2.5,pt=h.map((x,i)=>[24+(n>1?i*252/(n-1):126),110-(x.max-lo)/(hi-lo)*90]),pr=h.reduce((b,x)=>x.e1>b.e1?x:b,h[0]),df=h[n-1].max-h[0].max;
 return`<select style="width:100%;margin-bottom:10px" onchange="ssel=this.value;V()">${names.map(x=>`<option${x==ssel?" selected":""}>${x}</option>`).join("")}</select><div class="c"><div class="nm">${h[n-1].max} kg</div><div class="mut">Tyngsta set senaste passet · ${n>1?(df>=0?"+":"")+df.toFixed(1)+" kg sedan start":"första loggen"}</div><svg viewBox="0 0 300 130" width="100%"><polyline fill="none" stroke="var(--ac)" stroke-width="3" stroke-linejoin="round" points="${pt.map(q=>q.join(",")).join(" ")}"/>${pt.map(q=>`<circle cx="${q[0]}" cy="${q[1]}" r="4" fill="var(--ac2)"/>`).join("")}<text x="2" y="18" font-size="10" fill="var(--mut)">${hi.toFixed(0)}</text><text x="2" y="112" font-size="10" fill="var(--mut)">${lo.toFixed(0)}</text></svg></div><div class="c"><div class="row" style="margin-top:0"><span>🏆 Bästa beräknade 1RM</span><b>${pr.e1.toFixed(1)} kg</b></div><div class="mut">Uppskattning med Epley-formeln: vikt × (1 + reps/30).</div></div><div class="c">${h.slice().reverse().map(x=>`<div class="wl"><span>${x.d}</span><b>${x.s.map(y=>y.kg+"×"+y.r).join(", ")}</b></div>`).join("")}</div>`}
-const FD=`Ägg|13|1|11
-Kycklingfilé (rå)|23|0|2
-Nötfärs 10 %|20|0|10
-Lax|20|0|13
-Torsk|17|0|1
-Tonfisk (på burk)|25|0|1
-Räkor|18|0|1
-Fläskfilé|22|0|3
-Skinka|18|1|4
-Ris (kokt)|2.7|28|0.3
-Ris (okokt)|7|78|1
-Pasta (kokt)|5|25|1
-Pasta (okokt)|13|72|2
-Potatis|2|17|0.1
-Sötpotatis|1.6|20|0.1
-Havregryn|13|60|7
-Bröd (fullkorn)|9|40|3
-Knäckebröd|10|65|2
-Mjölk 1,5 %|3.4|4.8|1.5
-Grekisk yoghurt|10|4|2
-Kvarg naturell|12|4|0.3
-Keso|12|3|4
-Ost (hård)|27|0|28
-Smör|0.5|0|81
-Olivolja|0|0|100
-Avokado|2|2|15
-Banan|1|23|0.3
-Äpple|0.3|12|0.2
-Apelsin|1|9|0.2
-Blåbär|0.7|12|0.3
-Broccoli|3|4|0.4
-Tomat|0.9|3|0.2
-Gurka|0.7|2|0.1
-Morot|0.9|8|0.2
-Paprika|1|5|0.3
-Spenat|3|1|0.4
-Kikärtor (kokta)|8|20|3
-Röda linser (okokta)|25|50|2
-Tofu|12|2|7
-Jordnötssmör|25|12|50
-Mandlar|21|5|50
-Proteinpulver|80|8|5
-Honung|0.3|82|0
-Mörk choklad|8|33|42`.split("\n").map(l=>{const a=l.split("|");return{n:a[0],p:+a[1],c:+a[2],f:+a[3]}});
+const FD=`Bröd (fullkorn)|9|40|3|0|skiva|35
+Vitt bröd|8|47|3|0|skiva|30
+Knäckebröd|10|65|2|0|skiva|12
+Tortilla (vete)|8|50|7|0|st|60
+Hamburgerbröd|9|47|4|0|st|60
+Havregryn|13|60|7|0|dl|40
+Müsli|10|60|8|0|portion|50
+Granola|9|60|15|0|portion|40
+Cornflakes|7|84|1|0|portion|30
+Riskakor|8|80|3|0|st|9
+Kanelbulle|7|50|13|0|st|70
+Pasta (kokt)|5|25|1|1|portion|200
+Pasta (okokt)|13|72|2|1|portion|85
+Ris (kokt)|2.7|28|0.3|1|portion|200
+Ris (okokt)|7|78|1|1|portion|75
+Nudlar (kokta)|4.5|25|1|1|portion|200
+Couscous (kokt)|4|23|0.3|1|portion|180
+Bulgur (kokt)|3|19|0.2|1|portion|180
+Quinoa (kokt)|4.4|21|1.9|1|portion|180
+Potatis (kokt)|2|17|0.1|1|potatis|80
+Sötpotatis|1.6|20|0.1|1|st|200
+Potatismos|2|15|4|1|portion|200
+Pommes frites (ugn)|3|30|8|1|portion|150
+Kycklingfilé (rå)|23|0|2|2|filé|150
+Kycklingfilé (stekt)|31|0|4|2|portion|120
+Kycklinglårfilé (rå)|19|0|7|2|portion|150
+Kalkonfilé|24|0|1|2|portion|150
+Nötfärs 10 %|20|0|10|2|portion|125
+Nötfärs 5 %|21|0|5|2|portion|125
+Biff|22|0|8|2|portion|150
+Fläskfilé|22|0|3|2|portion|150
+Bacon|14|0|26|2|skiva|15
+Skinka|18|1|4|2|skiva|15
+Falukorv|10|8|18|2|portion|150
+Köttbullar (stekta)|16|8|16|2|st|20
+Lax|20|0|13|2|portion|150
+Torsk|17|0|1|2|portion|150
+Tonfisk (på burk)|25|0|1|2|burk|110
+Räkor|18|0|1|2|portion|100
+Fiskpinnar|12|17|8|2|st|30
+Ägg|13|1|11|3|st|50
+Mjölk 1,5 %|3.4|4.8|1.5|3|glas|200
+Mjölk 3 %|3.4|4.8|3|3|glas|200
+Havredryck|1|7|1.5|3|glas|200
+Filmjölk|3.4|4.7|3|3|portion|200
+Naturell yoghurt|3.8|4.5|3|3|portion|150
+Grekisk yoghurt|10|4|2|3|portion|150
+Kvarg naturell|12|4|0.3|3|portion|150
+Keso|12|3|4|3|portion|125
+Hårdost|27|0|28|3|skiva|10
+Mozzarella|18|1|17|3|portion|125
+Fetaost|14|4|21|3|portion|50
+Matlagningsgrädde|3|4|15|3|dl|100
+Crème fraiche|2.5|3.5|32|3|msk|15
+Proteinpulver|80|8|5|3|scoop|30
+Banan|1|23|0.3|4|st|100
+Äpple|0.3|12|0.2|4|st|150
+Apelsin|1|9|0.2|4|st|130
+Päron|0.4|13|0.1|4|st|150
+Vindruvor|0.7|17|0.2|4|portion|100
+Jordgubbar|0.8|6|0.3|4|portion|100
+Blåbär|0.7|12|0.3|4|portion|100
+Hallon|1.4|5|0.5|4|portion|100
+Kiwi|1|11|0.5|4|st|70
+Ananas|0.5|12|0.1|4|portion|100
+Avokado|2|2|15|4|halv|70
+Tomat|0.9|3|0.2|4|st|100
+Gurka|0.7|2|0.1|4|portion|100
+Morot|0.9|8|0.2|4|st|80
+Paprika|1|5|0.3|4|st|150
+Broccoli|3|4|0.4|4|portion|150
+Blomkål|2|3|0.3|4|portion|150
+Spenat|3|1|0.4|4|portion|50
+Sallad|1.2|2|0.2|4|portion|75
+Lök|1|8|0.1|4|st|100
+Champinjoner|3|0.5|0.3|4|portion|100
+Majs (burk)|3|16|1.5|4|portion|80
+Ärtor (frysta)|5|10|0.5|4|portion|80
+Kikärtor (kokta)|8|20|3|5|portion|150
+Svarta bönor (kokta)|8|20|0.5|5|portion|150
+Röda linser (okokta)|25|50|2|5|portion|80
+Tofu|12|2|7|5|portion|150
+Hummus|7|12|17|5|msk|20
+Jordnötssmör|25|12|50|5|msk|16
+Mandlar|21|5|50|5|näve|25
+Cashewnötter|18|30|44|5|näve|25
+Valnötter|15|7|65|5|näve|25
+Jordnötter|26|12|49|5|näve|25
+Chiafrön|17|8|31|5|msk|12
+Smör|0.5|0|81|6|msk|15
+Olivolja|0|0|100|6|msk|14
+Rapsolja|0|0|100|6|msk|14
+Majonnäs|1|2|75|6|msk|15
+Honung|0.3|82|0|6|msk|20
+Sylt|0.4|60|0|6|msk|20
+Ketchup|1|25|0.1|6|msk|15
+Sojasås|8|5|0|6|msk|15
+Socker|0|100|0|6|tsk|5
+Mörk choklad|8|33|42|7|ruta|10
+Mjölkchoklad|7|57|31|7|ruta|10
+Chips|6|50|33|7|portion|50
+Glass (vanilj)|3.5|24|11|7|kula|50
+Digestivekex|7|63|21|7|kex|15
+Proteinbar|36|40|14|7|bar|55
+Apelsinjuice|0.7|10|0.2|8|glas|200
+Läsk (socker)|0|10.6|0|8|burk|330
+Chokladmjölk|3.4|10|1.5|8|glas|200
+Pizza (fryst)|10|30|9|9|st|350
+Lasagne|8|13|8|9|portion|350
+Pannkaka|6|23|8|9|st|60
+Pytt i panna|7|13|9|9|portion|350
+Tunnbröd|9|55|3|0|st|40
+Surdegsbröd|8|45|1.5|0|skiva|40
+Rågbröd|7|40|2|0|skiva|35
+Baguette|9|55|1.5|0|bit|60
+Fralla|9|52|4|0|st|60
+Korvbröd|9|48|4|0|st|50
+Pitabröd|9|55|1.5|0|st|60
+Naan|9|50|6|0|st|90
+Bagel|10|52|1.5|0|st|90
+Croissant|8|45|22|0|st|60
+Fiberrika flingor|10|60|2|0|portion|40
+Havregrynsgröt (kokt)|2|9|1.5|0|portion|250
+Vetemjöl|10|73|1.3|0|dl|60
+Rågkex|10|60|2.5|0|st|15
+Majskakor|8|75|3|0|st|10
+Müslibar|6|65|12|0|st|35
+Skorpor|11|70|7|0|st|10
+Fullkornspasta (kokt)|5.5|23|1.2|1|portion|200
+Fullkornspasta (okokt)|13|65|2.5|1|portion|85
+Fullkornsris (kokt)|2.7|26|1|1|portion|200
+Jasminris (kokt)|2.7|29|0.3|1|portion|200
+Basmatiris (kokt)|3|28|0.4|1|portion|200
+Risnudlar (kokta)|1.8|24|0.2|1|portion|200
+Gnocchi|4|35|1|1|portion|200
+Tortellini (kokta)|10|30|7|1|portion|200
+Ravioli|9|28|5|1|portion|200
+Bakad potatis|2.5|20|0.2|1|st|200
+Rostad potatis|2.5|20|4|1|portion|200
+Klyftpotatis (ugn)|2.5|20|5|1|portion|200
+Potatisgratäng|3|13|9|1|portion|250
+Rotmos|1.2|7|2|1|portion|200
+Polenta (kokt)|2|14|0.5|1|portion|200
+Kycklingbröst (grillat)|29|0|3|2|portion|120
+Kycklingvingar|19|0|15|2|st|40
+Kycklingkorv|13|3|16|2|portion|150
+Lammfärs|17|0|20|2|portion|125
+Fläskkarré|18|0|12|2|portion|150
+Fläskkotlett|21|0|8|2|st|150
+Revbensspjäll|18|0|25|2|portion|200
+Oxfilé|22|0|4|2|portion|150
+Entrecôte|21|0|10|2|portion|150
+Högrev|20|0|10|2|portion|150
+Rostbiff|22|0|4|2|portion|100
+Blandfärs|18|0|15|2|portion|125
+Hamburgare (stekt)|20|0|15|2|st|100
+Prinskorv|12|3|23|2|st|20
+Wienerkorv|11|4|20|2|st|50
+Grillkorv|12|4|22|2|st|100
+Chorizo|24|2|35|2|portion|30
+Rökt lax|22|0|10|2|portion|50
+Sej|18|0|1|2|portion|150
+Kolja|17|0|0.7|2|portion|150
+Rödspätta|17|0|1.5|2|portion|150
+Inlagd sill|14|10|12|2|portion|60
+Makrill i tomatsås|13|3|14|2|burk|125
+Sardiner (på burk)|23|0|11|2|burk|90
+Strömming|18|0|6|2|st|50
+Gös|19|0|0.8|2|portion|150
+Röding|20|0|9|2|portion|150
+Musslor (kokta)|24|7|3|2|portion|150
+Krabbstavar|7|10|1|2|st|18
+Äggvita|11|0.7|0.2|3|st|35
+Äggula|16|0.6|27|3|st|18
+Mjölk 0,5 %|3.5|4.8|0.5|3|glas|200
+Laktosfri mjölk|3.5|4.8|1.5|3|glas|200
+Sojadryck|3.3|2.5|1.8|3|glas|200
+Mandeldryck|0.4|3|1.1|3|glas|200
+Fruktyoghurt|3.5|13|2.5|3|portion|150
+Grekisk yoghurt 10 %|3.3|4|10|3|portion|150
+Skyr|11|4|0.2|3|portion|150
+Kvarg vanilj|11|8|0.2|3|portion|150
+Kvarg frukt|9|11|0.2|3|portion|150
+Proteinyoghurt|10|4|0.3|3|portion|150
+Gräddfil|2.7|4|12|3|msk|15
+Vispgrädde|2|3|40|3|msk|15
+Kaffegrädde|3|4|12|3|msk|15
+Parmesan|35|0|28|3|msk|7
+Brie|20|0|28|3|skiva|25
+Cheddar|25|0|34|3|skiva|10
+Prästost|27|0|28|3|skiva|10
+Halloumi|22|2|25|3|skiva|40
+Färskost naturell|6|3|25|3|msk|20
+Färskost lätt|10|4|10|3|msk|20
+Ricotta|11|3|13|3|portion|60
+Persika|0.9|9|0.1|4|st|130
+Nektarin|1|9|0.2|4|st|130
+Plommon|0.7|11|0.2|4|st|50
+Körsbär|1|13|0.3|4|portion|100
+Mango|0.8|14|0.4|4|portion|150
+Vattenmelon|0.6|7|0.1|4|portion|200
+Cantaloupemelon|0.8|8|0.2|4|portion|200
+Fikon|0.8|16|0.3|4|st|50
+Dadlar|2|66|0.4|4|st|8
+Russin|3|70|0.5|4|näve|30
+Torkade aprikoser|3.5|50|0.5|4|st|10
+Torkad frukt (blandad)|2.5|62|0.6|4|näve|30
+Citron|1|3|0.3|4|st|80
+Lingon|0.5|8|0.5|4|msk|15
+Frysta bär (blandade)|0.8|9|0.3|4|portion|100
+Rödbetor|1.6|8|0.2|4|st|80
+Kålrot|1|5|0.2|4|portion|100
+Palsternacka|1.2|13|0.5|4|st|100
+Rotselleri|1.5|7|0.3|4|portion|100
+Rödkål|1.3|6|0.2|4|portion|100
+Vitkål|1.3|5|0.2|4|portion|100
+Brysselkål|4|4|0.5|4|portion|100
+Grönkål|3.3|4|0.9|4|portion|50
+Zucchini|1.2|2|0.3|4|st|200
+Aubergine|1|4|0.2|4|portion|200
+Butternutpumpa|1|10|0.1|4|portion|150
+Sparris|2.2|2|0.1|4|portion|100
+Gröna bönor|2|4|0.2|4|portion|100
+Sockerärtor|3|5|0.2|4|portion|80
+Edamame|11|9|5|4|portion|80
+Vitlök|6|30|0.5|4|klyfta|4
+Purjolök|1.5|4|0.3|4|portion|100
+Blekselleri|0.7|1|0.2|4|stjälk|40
+Körsbärstomater|0.9|3|0.2|4|portion|100
+Oliver|1|4|15|4|st|4
+Saltgurka|0.5|3|0.1|4|st|20
+Wokgrönsaker (frysta)|2|5|0.3|4|portion|150
+Vita bönor (kokta)|7|17|0.5|5|portion|150
+Kidneybönor (kokta)|8|18|0.5|5|portion|150
+Gröna linser (kokta)|9|20|0.5|5|portion|150
+Röda linser (kokta)|8|17|0.4|5|portion|150
+Pistagenötter|20|17|45|5|näve|25
+Hasselnötter|15|7|61|5|näve|25
+Nötmix (osaltad)|20|15|50|5|näve|25
+Solrosfrön|21|20|51|5|msk|10
+Pumpafrön|30|5|49|5|msk|10
+Sesamfrön|18|23|50|5|msk|9
+Linfrö|18|2|42|5|msk|10
+Kokosflingor|7|6|65|5|msk|8
+Mandelsmör|21|6|55|5|msk|16
+Tahini|17|12|54|5|msk|15
+Falafel|13|30|17|5|st|20
+Vegetariska köttbullar|12|12|9|5|st|20
+Vegofärs (soja)|16|6|4|5|portion|125
+Quornfärs|14|4|2|5|portion|125
+Tempeh|19|9|11|5|portion|100
+Vegoburgare|15|10|9|5|st|100
+Kokosolja|0|0|100|6|msk|14
+Sesamolja|0|0|100|6|msk|14
+Bregott (80 %)|0.5|0.5|80|6|msk|15
+Flytande margarin|0|0|80|6|msk|14
+Senap|5|5|5|6|msk|15
+Pesto|5|4|45|6|msk|15
+Agavesirap|0|76|0|6|msk|20
+Lönnsirap|0|67|0|6|msk|20
+Ljus sirap|0|78|0|6|msk|20
+Brunt socker|0|98|0|6|tsk|5
+Florsocker|0|100|0|6|msk|8
+Marmelad|0.5|60|0|6|msk|20
+Nutella|6|57|31|6|msk|15
+Kakao|20|11|14|6|msk|7
+Saltstänger|10|72|3|7|portion|30
+Ostbågar|6|55|30|7|portion|50
+Popcorn (mikro)|9|50|25|7|portion|40
+Lösgodis (blandat)|2|75|2|7|portion|50
+Gelégodis|4|78|0.1|7|portion|50
+Lakrits|3|75|1|7|portion|30
+Kexchoklad|5|60|28|7|st|50
+Muffin|5|45|20|7|st|80
+Munk|6|40|25|7|st|60
+Wienerbröd|7|42|23|7|st|90
+Kladdkaka|5|45|28|7|bit|80
+Glasspinne (choklad)|3|27|17|7|st|60
+Pepparkakor|5|74|12|7|st|8
+Äppeljuice|0.1|11|0.1|8|glas|200
+Smoothie (frukt)|0.7|13|0.2|8|glas|250
+Saft (utspädd)|0|5|0|8|glas|250
+Energidryck|0|11|0|8|burk|250
+Sportdryck|0|6|0|8|flaska|500
+Latte|3|4.5|1.8|8|kopp|250
+Cappuccino|2.8|4|1.5|8|kopp|180
+Varm choklad|3.5|11|2|8|kopp|250
+Kokosvatten|0.2|3.7|0.2|8|glas|250
+Isté (sötat)|0|8|0|8|glas|250
+Köttfärssås|8|6|7|9|portion|200
+Pasta carbonara|8|23|8|9|portion|350
+Spaghetti bolognese|7|16|5|9|portion|400
+Burrito|9|22|7|9|st|250
+Kebab i bröd|10|20|11|9|st|300
+Hamburgare med bröd|13|22|12|9|st|200
+Korv med bröd|11|22|15|9|st|150
+Pommes frites (snabbmat)|3.5|36|15|9|portion|120
+Kycklingnuggets|14|17|14|9|st|18
+Fiskgratäng|8|11|8|9|portion|300
+Ärtsoppa|5|7|2|9|portion|400
+Sushi (lax)|6|28|4|9|bit|25
+Tomatsoppa|1|5|2|9|portion|300
+Pizzaslice|10|30|9|9|bit|130
+Wrap (färdig)|9|20|8|9|st|200
+Piroger|8|30|12|9|st|120
+Leverpastej|11|6|20|10|skiva|15
+Kalkonbröst (pålägg)|20|1|2|10|skiva|15
+Salami|22|1|32|10|skiva|8
+Skagenröra|5|3|20|10|msk|20
+Kalles kaviar|8|5|20|10|msk|10
+Lufttorkad skinka|26|0|18|10|skiva|10
+Rostbiff (pålägg)|22|0|4|10|skiva|15
+Tzatziki|3|4|8|10|msk|20
+Guacamole|2|4|15|10|msk|20
+Räkröra|6|5|20|10|msk|20
+Kycklingpålägg|17|2|3|10|skiva|15
+Krossade tomater|1.2|5|0.2|11|dl|100
+Passerade tomater|1.5|6|0.2|11|dl|100
+Tomatsås (pasta)|1.5|8|2|11|portion|100
+Barbecuesås|1|35|0.5|11|msk|15
+Kokosmjölk|2|3|17|11|dl|100
+Kokosmjölk (light)|1|2|7|11|dl|100
+Currypasta|3|10|10|11|msk|15
+Söt chilisås|0.5|50|0.2|11|msk|15
+Tacosås|1|9|0.5|11|msk|20
+Salsa|1.5|7|0.2|11|msk|20
+Bearnaisesås|1|4|40|11|msk|20
+Vinägrett|0.1|3|40|11|msk|15
+Caesardressing|1.5|4|40|11|msk|15
+Dressing (fettsnål)|1|8|8|11|msk|15
+Tomatpuré|5|17|0.5|11|msk|15
+Teriyakisås|3|20|0|11|msk|15`.split("\n").map(l=>{const a=l.split("|");return{n:a[0],p:+a[1],c:+a[2],f:+a[3],cat:+a[4],u:a[5],ug:+a[6]}}).sort((a,b)=>a.n.localeCompare(b.n,"sv"));
 const prevD=()=>{const d=new Date(dsel+"T12:00:00");d.setDate(d.getDate()-1);return new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)};
 function copyPrev(){const e=log[prevD()];if(!e)return;const t=tlD(dsel);Object.values(e.m).concat(e.x).forEach(v=>t.x.push(Object.assign({},v)));sv("log",log);V()}
 function recent(){const seen={},out=[];for(let i=0;i<30&&out.length<8;i++){const e=log[dstr(i)];if(!e)continue;Object.values(e.m).concat(e.x).forEach(v=>{if(v.n&&!seen[v.n]&&out.length<8){seen[v.n]=1;out.push(v)}})}return out}
@@ -349,7 +834,7 @@ function addRec(){const r=R[+document.getElementById("ar").value],x=+document.ge
 function diary(){rcL=recent();const d=dsel,e=log[d]||{m:{},x:[]},g=G(),it=[];
 Object.keys(e.m).forEach(i=>it.push(["m",i,S[i]+": "+e.m[i].n,e.m[i].k]));e.x.forEach((v,i)=>it.push(["x",i,v.n||"Annat",v.k]));
 const t=dayTot(d)||[0,0,0,0],lab=d==TD()?"Idag":new Date(d+"T12:00:00").toLocaleDateString("sv-SE",{weekday:"long",day:"numeric",month:"long"}),w=wat[d]||0;
-return`<div class="row"><button class="s" style="margin:0" onclick="shiftD(-1)">‹</button><b>${lab}</b><button class="s" style="margin:0" ${d>=TD()?"disabled":""} onclick="shiftD(1)">›</button></div><div class="c"><div class="nm">${Math.round(t[0])} av ${Math.round(g.k)} kcal</div><div class="bar" style="height:12px"><span style="width:${Math.min(100,100*t[0]/g.k)}%;background:var(--ac)"></span></div>${mac(t[1],t[2],t[3])}</div><div class="c">${it.length?it.map(x=>`<div class="wl"><span>${x[2]}<br><span class="mut">${Math.round(x[3])} kcal</span></span><button onclick="delE('${x[0]}',${x[1]})">✕</button></div>`).join(""):`<div class="mut">Inget loggat den här dagen.</div>`}<button class="s" onclick="copyPrev()">📋 Kopiera gårdagen</button></div>${rcL.length?`<div class="mut">Senast loggat – tryck för att lägga till:</div><div class="chips">${rcL.map((v,i)=>`<button onclick="addRc(${i})">${v.n}</button>`).join("")}</div>`:""}<div class="c"><div class="nm">💧 ${(w/10).toFixed(1).replace(".",",")} liter</div><button class="s" onclick="addWat(2,'${d}')">+ glas</button><button class="s" onclick="addWat(5,'${d}')">+ flaska</button><button class="s" onclick="addWat(-${w},'${d}')">Nollställ</button></div><h2>Lägg till mat</h2><div class="c"><div class="row"><select id="ar" style="width:100%">${R.map((r,i)=>[r,i]).sort((a,b)=>a[0].n.localeCompare(b[0].n,"sv")).map(([r,i])=>`<option value="${i}">${r.n}</option>`).join("")}</select></div><div class="row"><label>Portioner</label><input id="ax" type="number" value="1" step="0.25"></div><button class="b" style="margin-bottom:0" onclick="addRec()">Lägg till rätt</button></div><div class="c"><div class="mut">Sök livsmedel (per 100 g):</div><div class="row"><input id="fn" list="fl" placeholder="t.ex. Ägg" style="width:100%"><datalist id="fl">${FD.map(f=>`<option value="${f.n}">`).join("")}</datalist></div><div class="row"><label>Gram</label><input id="fg" type="number" value="100"></div><button class="s" onclick="addFd()">Lägg till</button></div><div class="c"><div class="mut">Eller lägg till annan mat:</div><div class="row"><input id="xn" type="text" placeholder="Namn" style="width:100%"></div><div class="row"><input id="xk" type="number" placeholder="kcal" style="width:23%"><input id="xp" type="number" placeholder="prot" style="width:23%"><input id="xc" type="number" placeholder="kolh" style="width:23%"><input id="xf" type="number" placeholder="fett" style="width:23%"></div><button class="s" onclick="addX('${d}')">Lägg till</button></div>`}
+return`<div class="row"><button class="s" style="margin:0" onclick="shiftD(-1)">‹</button><b>${lab}</b><button class="s" style="margin:0" ${d>=TD()?"disabled":""} onclick="shiftD(1)">›</button></div><div class="c"><div class="nm">${Math.round(t[0])} av ${Math.round(g.k)} kcal</div><div class="bar" style="height:12px"><span style="width:${Math.min(100,100*t[0]/g.k)}%;background:var(--ac)"></span></div>${mac(t[1],t[2],t[3])}</div>${burnH(d)}<div class="c">${it.length?it.map(x=>`<div class="wl"><span>${x[2]}<br><span class="mut">${Math.round(x[3])} kcal</span></span><span><button onclick="mmFrom('${x[0]}',${x[1]})">⭐</button><button onclick="delE('${x[0]}',${x[1]})">✕</button></span></div>`).join(""):`<div class="mut">Inget loggat den här dagen.</div>`}<button class="s" onclick="copyPrev()">📋 Kopiera gårdagen</button></div>${mmH()}${rcL.length?`<div class="mut">Senast loggat – tryck för att lägga till:</div><div class="chips">${rcL.map((v,i)=>`<button onclick="addRc(${i})">${v.n}</button>`).join("")}</div>`:""}<div class="c"><div class="nm">💧 ${(w/10).toFixed(1).replace(".",",")} liter</div><button class="s" onclick="addWat(2,'${d}')">+ glas</button><button class="s" onclick="addWat(5,'${d}')">+ flaska</button><button class="s" onclick="addWat(-${w},'${d}')">Nollställ</button></div><h2>Lägg till mat</h2>${foodH()}<h2>Eller en hel rätt</h2><div class="c"><div class="row"><select id="ar" style="width:100%">${R.map((r,i)=>[r,i]).sort((a,b)=>a[0].n.localeCompare(b[0].n,"sv")).map(([r,i])=>`<option value="${i}">${r.n}</option>`).join("")}</select></div><div class="row"><label>Portioner</label><input id="ax" type="number" value="1" step="0.25"></div><button class="b" style="margin-bottom:0" onclick="addRec()">Lägg till rätt</button></div><div class="c"><div class="mut">Eller lägg till annan mat:</div><div class="row"><input id="xn" type="text" placeholder="Namn" style="width:100%"></div><div class="row"><input id="xk" type="number" placeholder="kcal" style="width:23%"><input id="xp" type="number" placeholder="prot" style="width:23%"><input id="xc" type="number" placeholder="kolh" style="width:23%"><input id="xf" type="number" placeholder="fett" style="width:23%"></div><button class="s" onclick="addX('${d}')">Lägg till</button></div>`}
 function utv(){const N=urng,g=G(),ds=[...Array(N)].map((_,i)=>dstr(N-1-i)),tt=ds.map(dayTot),lg=tt.filter(Boolean),avg=j=>lg.length?lg.reduce((u,v)=>u+v[j],0)/lg.length:0,mx=Math.max(g.k*1.3,...tt.map(v=>v?v[0]:0)),wd=new Set(Object.keys(sd).map(k=>k.split("|")[0])),tr=ds.filter(d=>wd.has(d)).length,wv=ds.map(d=>wat[d]||0).filter(v=>v>0);
 const d7=[...Array(7)].map((_,i)=>dstr(6-i)),t7=d7.map(dayTot).filter(Boolean),a7=j=>t7.length?t7.reduce((u,v)=>u+v[j],0)/t7.length:0,tr7=d7.filter(d=>wd.has(d)).length;
 let stk=0;for(let i=0;i<400;i++){if(dayTot(dstr(i)))stk++;else if(i>0)break}
@@ -367,29 +852,127 @@ const thid=n=>{hid[n]?delete hid[n]:hid[n]=1;sv("hid",hid);day=null;week=null;V(
 const delR=j=>{own.splice(j,1);sv("own",own);loadOwn();rec=null;day=null;week=null;V()};
 const rform=()=>`<div class="c"><div class="row"><label>Namn</label><input id="on" type="text"></div><div class="row"><label>Typ</label><select id="ot">${S.map((s,i)=>`<option value="${i}">${s}</option>`).join("")}</select></div><div class="row"><label>Protein (g)</label><input id="op" type="number"></div><div class="row"><label>Kolhydrater (g)</label><input id="oc" type="number"></div><div class="row"><label>Fett (g)</label><input id="of" type="number"></div><div class="mut">Värdena gäller 1 portion.</div><textarea id="og" placeholder="Ingredienser, separera med komma (t.ex. 150 g kyckling, 75 g ris)" style="margin-top:8px"></textarea><textarea id="os" placeholder="Gör så här – ett steg per rad (valfritt)"></textarea><button class="b" onclick="saveR()">Spara recept</button></div>`;
 function saveR(){const v=i=>document.getElementById(i).value,n=v("on").replace(/['"<>]/g,"").trim();if(!n||!(+v("op")||+v("oc")||+v("of")))return;own.push({n,t:+v("ot"),p:+v("op"),c:+v("oc"),f:+v("of"),g:v("og").split(",").map(x=>x.trim()).filter(Boolean),s:v("os")});sv("own",own);loadOwn();addR=false;V()}
-function bkE(){const o={};KEYS.forEach(k=>{const v=ld(k);if(v!==null)o[k]=v});const e=document.getElementById("bk");e.value=JSON.stringify(o);e.select();try{navigator.clipboard.writeText(e.value)}catch(x){}}
+function bkE(){const o={};KEYS.forEach(k=>{if(k=="pf")return;const v=ld(k);if(v!==null)o[k]=v});const e=document.getElementById("bk");e.value=JSON.stringify(o);e.select();try{navigator.clipboard.writeText(e.value)}catch(x){}}
 function bkI(){try{const o=JSON.parse(document.getElementById("bk").value);KEYS.forEach(k=>{if(k in o)sv(k,o[k])});location.reload()}catch(x){document.getElementById("bk").value="Kunde inte läsa texten."}}
+let ch=ld("ch")||{},bm=ld("bm")||{},pf=ld("pf")||[],gm=false,gi=0,bsel="Midja",pd=ld("pd")||{},stp=ld("stp")||{},bd=ld("bd")||{},msub="idag";if(!st.sg)st.sg=8000;if(!st.cm)st.cm="real";
+(function(){try{const q=new URLSearchParams(location.search).get("steg");if(q&&+q>0){stp[TD()]=Math.round(+q);sv("stp",stp);history.replaceState(null,"",location.pathname)}}catch(e){}})();
+const LN=["Nybörjare","Utmanare","Rutinerad","Stark","Atlet","Mästare","Legend"],lvl=x=>Math.floor(Math.sqrt(x/150))+1,M0=()=>["idag","vecka","rec"].includes(msub)?msub:"idag";
+const wkStart=()=>dstr((new Date().getDay()+6)%7),wGoal=()=>Math.round(st.w*35/100);
+const passWk=()=>Object.keys(pd).filter(q=>q.split("|")[0]>=wkStart()).length;
+function xpData(){let x=0;const days=new Set();
+Object.keys(sd).forEach(k=>{x+=5;days.add(k.split("|")[0])});x+=Object.keys(pd).length*100;
+Object.keys(log).forEach(d=>{if(dayTot(d)){x+=15;days.add(d)}});
+Object.keys(wat).forEach(d=>{if(wat[d]>=wGoal())x+=10;if(wat[d]>0)days.add(d)});
+Object.keys(stp).forEach(d=>{if(stp[d]>=st.sg)x+=20;if(stp[d]>0)days.add(d)});
+wl.forEach(e=>{x+=10;days.add(e.d)});x+=Object.keys(ch).length*50;Object.keys(xa).forEach(d=>{if(xa[d].length)days.add(d)});return{x,days}}
+function streak(days){let s=0;for(let i=0;i<400;i++){if(days.has(dstr(i)))s++;else if(i>0)break}return s}
+function BG(){const X0=xpData(),n=Object.keys(pd).length,s=streak(X0.days),wd=Object.keys(wat).filter(k=>wat[k]>=wGoal()).length,sp=Object.values(stp);
+return[["🥇","Första passet",n>=1],["🔥","5 pass",n>=5],["💪","10 pass",n>=10],["🏅","25 pass",n>=25],["⚡","3 dagar i rad",s>=3],["🌟","7 dagar i rad",s>=7],["👑","30 dagar i rad",s>=30],["💧","Vattenmästare: 5 dagar",wd>=5],["👟","Stegmålet nått",sp.some(v=>v>=st.sg)],["🚀","10 000 steg",sp.some(v=>v>=1e4)],["📒","Loggat 7 dagar",Object.keys(log).filter(k=>dayTot(k)).length>=7],["🎯","Veckomålet nått",passWk()>=P[prog].length-1]]}
+function fest(t,s){const o=document.getElementById("ts");if(o){o.querySelector(".mut").innerHTML+="<br>"+t+" "+s;return}
+const e=document.createElement("div");e.className="toast";e.id="ts";e.onclick=()=>e.remove();e.innerHTML=`<div><div style="font-size:54px">🎉</div><div class="nm" style="font-size:20px">${t}</div><p class="mut">${s}</p><button class="b" style="margin:6px 0 0">Kul!</button></div>`;document.body.appendChild(e);try{navigator.vibrate&&navigator.vibrate([80,60,120])}catch(x){}
+const c=["#7c3aed","#ff5d8f","#f59e0b","#2bb3a3","#2563eb"];for(let i=0;i<40;i++){const p=document.createElement("i");p.className="cf";p.style.cssText=`left:${Math.random()*100}%;background:${c[i%5]};animation-delay:${Math.random()*.6}s;border-radius:${i%2?"50%":"2px"}`;document.body.appendChild(p);setTimeout(()=>p.remove(),3200)}}
+function chk(){chCk();const B=BG();if(!bd._i){B.forEach(x=>{if(x[2])bd[x[1]]=1});bd._i=1;sv("bd",bd);return}const nw=B.filter(x=>x[2]&&!bd[x[1]]);if(nw.length){nw.forEach(x=>bd[x[1]]=1);sv("bd",bd);fest("Ny utmärkelse! "+nw[0][0],nw.map(x=>x[1]).join(", "))}}
+function passChk(dn,ts){const k=TD()+"|"+tday;if(dn==ts&&ts>0){if(!pd[k]){pd[k]=1;sv("pd",pd);fest("Pass klart! 💪","+100 XP · "+tday)}}else if(pd[k]){delete pd[k];sv("pd",pd)}}
+function heroH(){const X0=xpData(),L=lvl(X0.x),a=150*(L-1)**2,b=150*L*L;return`<div class="hero lnk" onclick="tab='bel';rec=null;V();scrollTo(0,0)"><div style="display:flex;justify-content:space-between;align-items:center"><div><div class="mut">Nivå ${L}</div><div style="font-size:22px;font-weight:800">${LN[Math.min(L-1,6)]}</div></div><div style="font-size:26px;font-weight:800">🔥 ${streak(X0.days)}</div></div><div class="xp"><span style="width:${100*(X0.x-a)/(b-a)}%"></span></div><div class="mut">${X0.x} XP · ${b-X0.x} kvar till nivå ${L+1}</div></div>`}
+function setStp(){const v=+document.getElementById("sv").value;if(!(v>0))return;stp[TD()]=Math.round(v);sv("stp",stp);V()}
+function steps(){const v=stp[TD()]||0,g=st.sg,l7=[...Array(7)].map((_,i)=>stp[dstr(6-i)]||0),mx=Math.max(g,...l7),f=x=>x.toLocaleString("sv-SE");
+return`<div class="c"><div class="nm">👟 Steg idag: ${f(v)} av ${f(g)}${v>=g?" ✅":""}</div><div class="bar" style="height:12px"><span style="width:${Math.min(100,100*v/g)}%;background:var(--ac2)"></span></div><div class="row"><input id="sv" type="number" inputmode="numeric" placeholder="Antal steg från Hälsa-appen" style="width:100%"><button class="s" style="margin:0;white-space:nowrap" onclick="setStp()">Spara</button></div><svg viewBox="0 0 70 24" width="100%" height="44" preserveAspectRatio="none">${l7.map((x,i)=>`<rect x="${i*10+1}" y="${24-22*x/mx}" width="8" height="${22*x/mx}" rx="2" fill="${x>=g?"var(--ac2)":"var(--ac)"}"/>`).join("")}</svg><button class="s" onclick="tab='profil';V();scrollTo(0,0)">📲 Hämta stegen automatiskt</button></div>`}
+function bel(){const X0=xpData(),B=BG();return`<h1>Belöningar</h1>${heroH()}${chH()}<div class="c"><div class="row"><span>💪 Genomförda pass</span><b>${Object.keys(pd).length}</b></div><div class="row"><span>🎯 Pass den här veckan</span><b>${passWk()} av ${P[prog].length-1}</b></div><div class="row"><span>🏆 Utmärkelser</span><b>${B.filter(x=>x[2]).length} av ${B.length}</b></div></div><h2>Utmärkelser</h2><div class="bg">${B.map(x=>`<div class="${x[2]?"":"lk"}"><b>${x[0]}</b>${x[1]}</div>`).join("")}</div><h2>Så får du XP</h2><div class="c"><ul><li>Klart pass: +100</li><li>Varje klarat set: +5</li><li>Loggad matdag: +15</li><li>Vattenmålet nått: +10</li><li>Stegmålet nått: +20</li><li>Vikt loggad: +10</li><li>Veckans utmaning klar: +50</li></ul></div><p class="mut">"Dagar i rad" räknar dagar då du loggat mat, träning, vatten, steg eller vikt.</p>`}
+if(!st.pl)st.pl=1;st.bud=st.bud||0;const rk={};
+const PR=[[/grekisk yoghurt/,38],[/yoghurt/,28],[/kyckling/,125],[/kalkon/,130],[/nötfärs/,110],[/nötkött/,170],[/biff/,250],[/fläsk/,110],[/falukorv/,45],[/bacon/,130],[/skinka/,150],[/lax/,200],[/torsk/,190],[/räk/,200],[/tonfisk/,100],[/(^|\s)ost/,110],[/smör/,100],[/havregryn/,20],[/müsli/,45],[/granola/,60],[/flingor/,45],[/quinoa/,75],[/(^|\s)ris/,28],[/pasta|spaghetti/,25],[/bulgur|couscous/,35],[/nudlar/,40],[/sötpotatis/,30],[/potatis/,15],[/rotfrukt/,18],[/broccoli/,40],[/bär/,80],[/russin|torkad/,90],[/frukt/,35],[/kvarg/,45],[/keso/,40],[/mjölk/,15],[/grädde/,45],[/tofu/,80],[/hummus/,60],[/nötter|mandlar/,150],[/linser/,40],[/bönor/,25],[/tomatsås/,40],[/kokosmjölk/,30],[/buljong/,8],[/proteinpulver/,300]],
+PU=[[/ägg/,3],[/banan/,3],[/äpple/,4],[/lök/,2],[/avokado/,12],[/proteinpulver/,10],[/chiafrön/,3],[/jordnötssmör/,2],[/honung/,3],[/crème fraiche/,2],[/olivolja/,2],[/bröd/,1.5],[/riskak/,1.5],[/tortilla/,5],[/tacoskal/,2.5],[/falafel/,4],[/köttbull/,3],[/våffl/,3],[/proteinbar/,22],[/tonfisk/,18],[/kikärtor|bönor|krossade tomater/,12],[/frukt/,5],[/hummus/,3],[/fiskpinn/,4]],
+FL=[[/grönsak/,10],[/sås/,6],[/sallad/,8],[/lingon/,4],[/gurka/,6],[/ost/,6],[/skinka/,6],[/parmesan/,6],[/vitlök/,2],[/currypasta/,4],[/lasagne/,6],[/tzatziki/,8],[/bär/,10],[/lök/,2]];
+function ic(q){q=q.toLowerCase();const f=(a,t)=>{for(const[r,v]of a)if(r.test(t))return v},m=q.match(/^(1\/2|1\/4|\d+(?:[.,]\d+)?)\s*(g|dl|kg|msk|scoop|burk|skivor|skiva|st|stor)?\s+(.*)$/);
+if(!m)return f(FL,q)||5;const n=m[1]=="1/2"?.5:m[1]=="1/4"?.25:+m[1].replace(",","."),u=m[2],t=m[3];if(u=="g")return n/1000*(f(PR,t)||60);if(u=="dl")return n/10*(f(PR,t)||15);return n*(f(PU,t)||f(FL,t)||3)}
+const _c={},rc=r=>{const k=st.pl+"|"+r.g.join(";");return _c[k]??(_c[k]=r.g.reduce((u,g)=>u+ic(g),0)*(st.pl||1))};
+const cst=(r,k)=>rc(r)*k/r.k;
+function bf(m,k,i){if(!st.bud)return m;const cap=st.bud/7*SH[i]*1.1;return m.filter(r=>cst(r,k)<=cap)}
+function bp(pool,k,i){if(!st.bud)return pool;const cap=st.bud/7*SH[i]*1.1,c=pool.filter(r=>cst(r,k)<=cap);return c.length?c:pool.slice().sort((a,b)=>cst(a,k)-cst(b,k)).slice(0,4)}
+const dcost=()=>day?day.reduce((u,d)=>u+rc(d.r)*d.x,0):0;
+function wcost(){const c=week.reduce((u,d)=>u+d.reduce((a,m)=>a+rc(m.r)*m.x,0),0);return`<div class="c"><div class="nm">💰 Veckan kostar ca ${Math.round(c)} kr</div><div class="mut">${st.bud>0?(c<=st.bud*1.05?"Inom din budget på "+st.bud+" kr ✅":"Lite över din budget på "+st.bud+" kr. Slumpa en ny vecka eller höj budgeten."):"Ange en matbudget under Profil så anpassar appen menyn."}</div></div>`}
+function fill(t,r){const nm=r.g.map(g=>g.replace(/^(1\/2|1\/4|[\d.,]+)\s*(g|dl|msk|scoop|burk|skivor|skiva|st|stor)?\s*/i,"").trim()).filter(Boolean),
+pr=nm.filter(x=>/kyckling|kalkon|nötfärs|nötkött|biff|fläsk|falukorv|bacon|köttbull|skinka|lax|torsk|tonfisk|räk|fisk|ägg|tofu|linser|kikärt|bönor|falafel|keso|kvarg|proteinpulver/i.test(x)),
+cb=nm.filter(x=>/(^|\s)ris|(^|\s)pasta|spaghetti|potatis|nudlar|bulgur|couscous|quinoa|bröd|havregryn|tortilla|rotfrukter|tacoskal|knäcke|riskak|våffl/i.test(x)),
+rs=nm.filter(x=>!pr.includes(x)&&!cb.includes(x)&&!/olja|^smör/i.test(x)),j=a=>a.length>1?a.slice(0,-1).join(", ")+" och "+a[a.length-1]:a[0]||"",
+o={P:j(pr)||"proteinet",C:j(cb)||"tillbehören",V:j(rs)||"grönsakerna",A:j(nm)};return t.split("|").map(z=>z.replace(/\{(\w)\}/g,(_,k)=>o[k]))}
+const sn=t=>t.replace(/[|;'"<>`]/g,"").trim(),exA=()=>(X[tday]||"").split(";").filter(Boolean);
+function exS(a){X[tday]=a.join(";");xo[tday]=X[tday];sv("xo",xo);V()}
+const exDel=i=>{const a=exA();a.splice(i,1);exS(a)};
+const exSet=(i,f,v)=>{const a=exA(),p=a[i].split("|");p[f]=sn(v)||p[f];a[i]=p.join("|");exS(a)};
+function exAdd(){const nm=sn(document.getElementById("an").value)||document.getElementById("ae").value;if(!nm)return;exS(exA().concat(nm+"|"+dr(nm)))}
+const exRs=()=>{if(X0[tday]!==undefined){X[tday]=X0[tday];delete xo[tday];sv("xo",xo);V()}};
+const edH=()=>`<p class="mut">Ändra antal set och reps, ta bort övningar eller lägg till nya. Dina ändringar sparas.</p>`+exA().map((e,i)=>{const a=e.split("|");return`<div class="c"><div class="row" style="margin:0"><b>${a[0]}</b><button class="s" style="margin:0" onclick="exDel(${i})">✕ Ta bort</button></div><div class="st"><input type="number" value="${a[1]}" onchange="exSet(${i},1,this.value)"><span class="mut">set ×</span><input type="text" value="${a[2]}" style="width:90px" onchange="exSet(${i},2,this.value)"><span class="mut">reps</span></div></div>`}).join("")+`<div class="c"><div class="nm">Lägg till övning</div><div class="chips">${EG.map(g=>`<button class="${g==agrp?"on":""}" onclick="agrp='${g}';V()">${g}</button>`).join("")}</div><select id="ae" style="width:100%;margin-bottom:8px">${exBy(agrp).map(n=>`<option>${n}</option>`).join("")}</select><div class="row"><input id="an" type="text" placeholder="Eller skriv en egen övning" style="width:100%"></div><button class="b" style="margin-bottom:0" onclick="exAdd()">+ Lägg till i passet</button></div>`+(X0[tday]!==undefined?`<button class="s" onclick="exRs()">Återställ passet</button>`:"");
+const schemaH=()=>`<div class="c"><div class="nm">Skapa schema</div><div class="mut">Smart schema bygger passen åt dig. Eget schema ger tomma pass som du fyller på själv.</div><div class="row"><label>Pass per vecka</label><select id="gd">${[2,3,4,5,6].map(n=>`<option${n==3?" selected":""}>${n}</option>`).join("")}</select></div><div class="row"><label>Minuter per pass</label><select id="gm">${[20,30,45,60].map(n=>`<option${n==30?" selected":""}>${n}</option>`).join("")}</select></div><button class="b" onclick="mkCp(1)">Skapa smart schema</button><button class="s" onclick="mkCp(0)">Skapa eget schema</button>${cp?`<button class="s" onclick="rmCp()">Ta bort mitt schema</button>`:""}</div>`;
+function mkCp(sm){const d=+document.getElementById("gd").value,m=+document.getElementById("gm").value;let r;if(sm)r=gen(d,m,"Smart");else{const nn=[...Array(d)].map((_,i)=>"Eget pass "+(i+1));r={names:nn,sess:Object.fromEntries(nn.map(x=>[x,""]))}}
+if(cp)delete P[cp.n];cp={n:sm?"Smart schema ("+d+" dagar, "+m+" min)":"Eget schema ("+d+" dagar)",names:r.names,sess:r.sess};sv("cp",cp);r.names.forEach(x=>delete xo[x]);sv("xo",xo);applyCp();prog=cp.n;sv("prog",prog);tday=r.names[0];smo=false;edt=!sm;V()}
+function rmCp(){delete P[cp.n];cp=null;sv("cp",null);prog="Upper/Lower 4 dagar";sv("prog",prog);tday=P[prog][1];smo=false;V()}
+const wd=f=>{let n=0;for(let i=0,k=(new Date().getDay()+6)%7;i<=k;i++)if(f(dstr(i)))n++;return n};
+const CHL=[["Tre pass i veckan","💪",3,()=>passWk()],["Nå stegmålet 5 dagar","👟",5,()=>wd(d=>(stp[d]||0)>=st.sg)],["Nå vattenmålet 5 dagar","💧",5,()=>wd(d=>(wat[d]||0)>=wGoal())],["Logga maten 5 dagar","📒",5,()=>wd(d=>dayTot(d))],["Nå proteinmålet 4 dagar","🥩",4,()=>wd(d=>{const t=dayTot(d);return t&&t[1]>=G().p*.9})],["Var aktiv 6 dagar","🔥",6,()=>{const D=xpData().days;return wd(d=>D.has(d))}]];
+const chI=()=>Math.floor(new Date(wkStart()+"T12:00:00")/6048e5)%CHL.length;
+function chCk(){const c=CHL[chI()],k=wkStart();if(!ch[k]&&c[3]()>=c[2]){ch[k]=1;sv("ch",ch);fest("Veckans utmaning klar! "+c[1],c[0]+" · +50 XP")}}
+function chH(){const c=CHL[chI()],v=Math.min(c[2],c[3]());return`<div class="c"><div class="mut">Veckans utmaning</div><div class="nm">${c[1]} ${c[0]}${ch[wkStart()]?" ✅":""}</div><div class="bar" style="height:12px"><span style="width:${100*v/c[2]}%;background:var(--ac2)"></span></div><div class="mut">${v} av ${c[2]} · +50 XP när du klarar den</div></div>`}
+const gnav=n=>`<div class="row"><button class="s" style="margin:0" ${gi?"":"disabled"} onclick="gi--;V();scrollTo(0,0)">‹ Förra</button><b>Övning ${gi+1} av ${n}</b><button class="${gi<n-1?"b":"s"}" style="margin:0;width:auto;padding:12px 18px" ${gi<n-1?"":"disabled"} onclick="gi++;V();scrollTo(0,0)">Nästa ›</button></div>`;
+function bkF(){const o={};KEYS.forEach(k=>{const v=ld(k);if(v!==null)o[k]=v});const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(o)],{type:"application/json"}));a.download="macro-coach-backup.json";document.body.appendChild(a);a.click();a.remove()}
+function bkR(f){if(!f)return;const r=new FileReader();r.onload=()=>{document.getElementById("bk").value=r.result;bkI()};r.readAsText(f)}
+const BMN=["Midja","Bröst","Höft","Arm","Lår"];
+function addBm(){const v=+document.getElementById("bv").value;if(!v)return;bm[bsel]=(bm[bsel]||[]).filter(e=>e.d!=TD());bm[bsel].push({d:TD(),v});sv("bm",bm);V()}
+const delBm=i=>{bm[bsel].splice(i,1);sv("bm",bm);V()};
+function addPf(f){if(!f)return;const r=new FileReader();r.onload=e=>{const im=new Image();im.onload=()=>{const c=document.createElement("canvas"),k=Math.min(1,480/Math.max(im.width,im.height));c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext("2d").drawImage(im,0,0,c.width,c.height);pf.push({d:TD(),u:c.toDataURL("image/jpeg",.6)});try{localStorage.setItem("pf",JSON.stringify(pf))}catch(x){pf.pop();alert("Lagringen är full. Ta bort en äldre bild först.")}V()};im.src=e.target.result};r.readAsDataURL(f)}
+const delPf=i=>{pf.splice(i,1);sv("pf",pf);V()};
+function matt(){const a=bm[bsel]||[],z=a.length?a[a.length-1].v:0,df=a.length>1?z-a[0].v:0;
+return`<div class="chips">${BMN.map(n=>`<button class="${n==bsel?"on":""}" onclick="bsel='${n}';V()">${n}</button>`).join("")}</div><div class="c"><div class="row"><label>${bsel} (cm)</label><input id="bv" type="number" inputmode="decimal" step="0.5"></div><button class="b" style="margin-bottom:0" onclick="addBm()">Spara mått</button></div>${a.length?`<div class="c"><div class="nm">${z} cm</div><div class="mut">${a.length>1?(df>0?"+":"")+df.toFixed(1)+" cm sedan start":"Första mätningen"}</div>`+a.map((e,i)=>`<div class="wl"><span>${e.d}</span><b>${e.v} cm</b><button onclick="delBm(${i})">✕</button></div>`).reverse().join("")+`</div>`:`<p class="mut">Mät på samma ställe och tid på dagen, till exempel midjan i höjd med naveln.</p>`}<h2>Framstegsbilder</h2><div class="c"><div class="mut">Bilderna sparas bara på din telefon och förminskas så att de tar liten plats.</div><label class="s">📷 Lägg till bild<input type="file" accept="image/*" style="display:none" onchange="addPf(this.files[0])"></label></div>${pf.length?`<div class="bg">${pf.map((e,i)=>`<div style="padding:6px"><img src="${e.u}" style="width:100%;border-radius:10px"><br>${e.d}<br><button class="s" style="margin:4px 0 0" onclick="delPf(${i})">✕</button></div>`).join("")}</div>`:""}`}
+let mm=ld("mm")||[],mmO=false;
+function sug(a,lp){if(!lp||!lp.length)return"";const r=a[2]||"";if(/sek|max/i.test(r))return"";const m=r.match(/(\d+)\D+(\d+)/),lo=m?+m[1]:+(r.match(/^\d+/)||[0])[0],hi=m?+m[2]:lo;if(!lo)return"";
+const top=Math.max(...lp.map(x=>x.kg)),st2=top>=20?2.5:1,all=lp.every(x=>x.r>=hi),low=Math.min(...lp.map(x=>x.r))<lo;
+const t=all?`Du klarade ${hi} reps på alla set förra gången. Prova <b>${String(+(top+st2).toFixed(1)).replace(".",",")} kg</b> i dag.`:low?`Håll ${top} kg och sikta på minst ${lo} reps på alla set.`:`Behåll ${top} kg och sikta på ${hi} reps på alla set. Klarar du det höjer du nästa gång.`;
+return`<div class="mut" style="margin:4px 0">💡 ${t}</div>`}
+function mmAdd(i){const m=mm[i];if(!m)return;tlD(dsel).x.push({n:m.n,k:m.k,p:m.p,c:m.c,f:m.f});sv("log",log);V()}
+function mmFrom(t,i){const e=tlD(dsel),v=t=="m"?e.m[i]:e.x[i];if(!v)return;const n=(v.n||"Måltid").replace(/\s*\(\d+(?:[.,]\d+)?×\)$/,"");if(mm.some(x=>x.n==n))return;mm.push({n,k:Math.round(v.k),p:Math.round(v.p||0),c:Math.round(v.c||0),f:Math.round(v.f||0)});sv("mm",mm);V()}
+function mmSave(){const g=i=>+document.getElementById(i).value||0,n=document.getElementById("mn").value.replace(/['"<>|;`]/g,"").trim();if(!n||!(g("mk")||g("mp")||g("mc")||g("mf")))return;mm.push({n,k:g("mk")||Math.round(4*g("mp")+4*g("mc")+9*g("mf")),p:g("mp"),c:g("mc"),f:g("mf")});sv("mm",mm);V()}
+function mmFill(){const t=dayTot(dsel);if(!t)return;["mk","mp","mc","mf"].forEach((id,i)=>document.getElementById(id).value=Math.round(t[i]))}
+const mmDel=i=>{mm.splice(i,1);sv("mm",mm);V()};
+function mmH(){return`<div class="c"><div class="nm">⭐ Mina måltider</div>${mm.length?`<div class="chips">${mm.map((m,i)=>`<button onclick="mmAdd(${i})">${m.n} · ${Math.round(m.k)} kcal</button>`).join("")}</div><div class="mut">Tryck på en måltid för att lägga till den.</div>`:`<div class="mut">Spara dina vanligaste måltider här och logga dem med ett tryck. Tryck på ⭐ vid en loggad rad, eller skapa en ny nedan.</div>`}<button class="s" onclick="mmO=!mmO;V()">${mmO?"Stäng":"＋ Ny måltid eller ta bort"}</button>${mmO?`<div class="row"><label>Namn</label><input id="mn" type="text"></div><div class="row"><input id="mk" type="number" placeholder="kcal" style="width:23%"><input id="mp" type="number" placeholder="prot" style="width:23%"><input id="mc" type="number" placeholder="kolh" style="width:23%"><input id="mf" type="number" placeholder="fett" style="width:23%"></div><button class="s" onclick="mmFill()">Fyll i med dagens logg</button><button class="b" onclick="mmSave()">Spara måltid</button>${mm.map((m,i)=>`<div class="wl"><span>${m.n}</span><button onclick="mmDel(${i})">✕</button></div>`).join("")}`:""}</div>`}
+const FC=["Bröd & spannmål","Pasta, ris & potatis","Kött & fisk","Mejeri & ägg","Frukt & grönt","Baljväxter & nötter","Fett & smaksättare","Snacks & godis","Drycker","Färdigmat","Pålägg","Såser & kryddor"];let fcat=0,fsel=null;
+const kc100=f=>Math.round(4*f.p+4*f.c+9*f.f);
+function fFilter(){const q=document.getElementById("fq").value.trim().toLowerCase();document.querySelectorAll("#fl2 .fi").forEach(e=>{e.style.display=(q?e.dataset.n.includes(q):+e.dataset.c==fcat)?"":"none"})}
+function fAdd(){const f=FD[fsel];if(!f)return;const c=+document.getElementById("fa").value,gr=+document.getElementById("fg2").value,g=gr>0?gr:c*f.ug;if(!(g>0))return;const q=g/100;tlD(dsel).x.push({n:gr>0?f.n+", "+Math.round(gr)+" g":f.n+", "+c+" × "+f.u+" ("+Math.round(g)+" g)",k:(4*f.p+4*f.c+9*f.f)*q,p:f.p*q,c:f.c*q,f:f.f*q});sv("log",log);fsel=null;V()}
+function foodH(){const f=fsel!=null?FD[fsel]:null;
+return`<div class="c"><div class="nm">🥫 Matvaror</div><div class="mut">${FD.length} matvaror. Sök eller välj en grupp. Värdena är ungefärliga.</div><input id="fq" type="text" placeholder="Sök, t.ex. bröd, pasta eller ägg" oninput="fFilter()" style="width:100%;margin:8px 0"><div class="chips">${FC.map((c,i)=>`<button class="${i==fcat?"on":""}" onclick="fcat=${i};fsel=null;V()">${c}</button>`).join("")}</div>${f?`<div class="c" style="border:2px solid var(--ac)"><div class="nm">${f.n}</div><div class="mut">Per 100 g: ${kc100(f)} kcal · P ${f.p} · K ${f.c} · F ${f.f}</div><div class="row"><label>Antal ${f.u} (à ${f.ug} g)</label><input id="fa" type="number" inputmode="decimal" value="1" step="0.5"></div><div class="row"><label>Eller gram</label><input id="fg2" type="number" inputmode="numeric" placeholder="valfritt"></div><button class="b" style="margin-bottom:0" onclick="fAdd()">Lägg till i dagen</button></div>`:""}<div id="fl2">${FD.map((x,i)=>`<div class="wl fi lnk" data-n="${x.n.toLowerCase()}" data-c="${x.cat}" style="${x.cat==fcat?"":"display:none"}" onclick="fsel=${i};V()"><span>${x.n}<br><span class="mut">${kc100(x)} kcal per 100 g · 1 ${x.u} = ${x.ug} g</span></span><b>＋</b></div>`).join("")}</div></div>`}
+let xa=ld("xa")||{},bO=false;
+const sessNet=sets=>4*st.w*(sets*2.5/60);
+function typ(){const w=st.w,b=10*w+6.25*st.h-5*st.a+(st.sex=="Man"?5:-161);try{const v=Object.entries(stp).filter(e=>e[0]>=dstr(14)&&e[0]<TD()&&e[1]>0).map(e=>e[1]),sa=v.length>=3?v.reduce((a,c)=>a+c,0)/v.length:st.sg,steps=Math.max(0,sa-3000)*.0005*w,ss=P[prog].slice(1).map(k=>(X[k]||"").split(";").filter(Boolean).reduce((u,e)=>u+(+e.split("|")[1]||0),0)),avg=ss.reduce((a,c)=>a+c,0)/Math.max(1,ss.length),train=Math.min(ss.length,7)*sessNet(avg)/7;return{b,base:b*1.2,steps,train,tot:b*1.2+steps+train}}catch(e){return{b,base:b*1.2,steps:0,train:0,tot:b*st.act}}}
+function burn(d){const T=typ(),w=st.w,stv=stp[d]||0,sets=Object.keys(sd).filter(k=>k.split("|")[0]==d).length,ss=TD()==d?todaySession():null,tr=sessNet(sets),pl=ss?sessNet((X[ss]||"").split(";").filter(Boolean).reduce((u,e)=>u+(+e.split("|")[1]||0),0)):0,oth=(xa[d]||[]).reduce((u,v)=>u+v.k,0),ste=stv?Math.max(0,stv-3000)*.0005*w:0,stU=stv?ste:T.steps,trU=d==TD()?Math.max(tr,pl):tr;
+return{T,stv,sets,tr,ste,stU,oth,tot:T.base+stU+tr+oth,adj:(st.cm=="real"&&!(st.kc>0))?Math.max(st.sex=="Man"?1500:1200,T.base+stU+trU+oth+st.goal):null}}
+const ACT=[["Rask promenad",4.3],["Löpning (lugnt)",8.3],["Löpning (snabbt)",11],["Cykling (lugnt)",6.8],["Cykling (rask)",8],["Simning (lugnt)",5.8],["Fotboll",7],["Padel eller tennis",7.3],["Vandring",6],["Dans",5],["Yoga",2.5],["Längdskidåkning",7.5],["Trädgårdsarbete",4]];
+function actAdd(d){const a=ACT[+document.getElementById("aa").value],m=+document.getElementById("am").value;if(!a||!(m>0))return;(xa[d]=xa[d]||[]).push({n:a[0],min:m,k:Math.round((a[1]-1)*st.w*m/60)});sv("xa",xa);bO=false;V()}
+const actDel=(d,i)=>{xa[d].splice(i,1);sv("xa",xa);V()};
+const nf=x=>Math.round(x).toLocaleString("sv-SE");
+function burnS(){const B=burn(TD()),t=dayTot(TD()),eat=t?t[0]:0;return`<div class="c lnk" onclick="tab='fram';fsub='dag';dsel=TD();V();scrollTo(0,0)"><div class="mut">🔥 Dagens energi</div><div class="nm">Förbränning ca ${nf(B.tot)} kcal</div>${B.adj!=null?`<div class="mut">Mål idag: ${nf(B.adj)} kcal · kvar att äta: ${nf(Math.max(0,B.adj-eat))} ›</div>`:`<div class="mut">Visa detaljer ›</div>`}</div>`}
+function burnH(d){const B=burn(d),t=dayTot(d),eat=t?t[0]:0,f=nf;
+return`<div class="c"><div class="nm">🔥 Förbränning: ca ${f(B.tot)} kcal</div><div class="row"><span>Grundförbränning (vila)</span><b>${f(B.T.b)}</b></div><div class="row"><span>Vardag (sitta, stå, gå lite)</span><b>${f(B.T.base-B.T.b)}</b></div><div class="row"><span>Steg ${B.stv?f(B.stv):"(typiskt, inga inskrivna)"}</span><b>${f(B.stU)}</b></div><div class="row"><span>Styrketräning (${B.sets} set)</span><b>${f(B.tr)}</b></div>${(xa[d]||[]).map((v,i)=>`<div class="wl"><span>${v.n}, ${v.min} min</span><span><b>${v.k}</b> <button onclick="actDel('${d}',${i})">✕</button></span></div>`).join("")}<div class="row"><span>Ätit</span><b>${f(eat)} kcal</b></div><div class="row"><span>Balans mot förbränningen</span><b>${(eat-B.tot>0?"+":"")+f(eat-B.tot)} kcal</b></div>${B.adj!=null?`<div class="mut" style="margin:8px 0">Dagens mål med din aktivitet: <b>${f(B.adj)} kcal</b>${d==TD()?" · kvar att äta: <b>"+f(Math.max(0,B.adj-eat))+"</b>":""}</div>`:""}<button class="s" onclick="bO=!bO;V()">${bO?"Stäng":"＋ Lägg till annan aktivitet"}</button>${bO?`<div class="row"><select id="aa" style="width:100%">${ACT.map((a,i)=>`<option value="${i}">${a[0]}</option>`).join("")}</select></div><div class="row"><label>Minuter</label><input id="am" type="number" inputmode="numeric" value="30"></div><div class="mut">Promenader räknas redan i dina steg, så lägg inte in dem här.</div><button class="b" style="margin-bottom:0" onclick="actAdd('${d}')">Spara aktivitet</button>`:""}<div class="mut" style="margin-top:8px">Uppskattning, ungefär ±10–15 %.${d==TD()?" Siffran är preliminär tills dagen är slut.":""} Den blir bättre när du fyller i steg och loggar dina pass.</div></div>`}
 function V(){let h="";if(ob){obV();return}
 if(rec){const r=R[rec.i],x=rec.x;
-h=`<button class="s" onclick="rec=null;V()">‹ Tillbaka</button><button class="s" onclick="tfav('${r.n}')">${fav[r.n]?"♥ Favorit":"♡ Favorit"}</button><button class="s" onclick="thid('${r.n}')">${hid[r.n]?"Visa igen":"🚫 Visa inte"}</button>${r.own?`<button class="s" onclick="delR(${r.i-BASE})">Ta bort</button>`:""}${pic(r,"big")}<h1>${r.n}</h1><div class="mut">${S[r.t]} · ${x} portion · ${Math.round(r.k*x)} kcal</div>${bar(r.p*x,r.c*x,r.f*x)}${mac(r.p*x,r.c*x,r.f*x)}<button class="b" style="margin-top:12px" onclick="logRec(${rec.i},${x})">+ Lägg till i dagboken</button><h2>Ingredienser</h2><div class="c"><ul>${r.g.map(g=>`<li>${sc(g,x)}</li>`).join("")}</ul></div><h2>Gör så här</h2><div class="c"><ol>${(r.st?r.st.split("\n").filter(Boolean):MT[r.m].split("|")).map(s=>`<li>${s}</li>`).join("")}</ol></div><p class="mut">Mängderna är skalade till din portion. Näringsvärdena är uppskattningar.</p>`}
+h=`<button class="s" onclick="rec=null;V()">‹ Tillbaka</button><button class="s" onclick="tfav('${r.n}')">${fav[r.n]?"♥ Favorit":"♡ Favorit"}</button><button class="s" onclick="thid('${r.n}')">${hid[r.n]?"Visa igen":"🚫 Visa inte"}</button>${r.own?`<button class="s" onclick="delR(${r.i-BASE})">Ta bort</button>`:""}${pic(r,"big")}<h1>${r.n}</h1><div class="mut">${S[r.t]} · ${x} portion · ${Math.round(r.k*x)} kcal · ca ${Math.round(rc(r)*x)} kr · ⏱ ca ${TM[r.m]||20} min</div>${bar(r.p*x,r.c*x,r.f*x)}${mac(r.p*x,r.c*x,r.f*x)}<button class="b" style="margin-top:12px" onclick="logRec(${rec.i},${x})">+ Lägg till i dagboken</button><h2>Ingredienser</h2><div class="c">${r.g.map((g,q)=>`<label class="ck"><input type="checkbox" ${rk[r.i+"i"+q]?"checked":""} onchange="rk[${r.i}+'i${q}']=this.checked"><span>${sc(g,x)}</span></label>`).join("")}</div><h2>Gör så här</h2>${(r.st?r.st.split("\n").filter(Boolean):fill(MT[r.m],r)).map((t,q)=>`<label class="c" style="display:flex;gap:12px;align-items:flex-start"><input type="checkbox" onchange="rk[${r.i}+'s${q}']=this.checked"><span style="font-size:17px;line-height:1.45"><b>Steg ${q+1}</b><br>${t}</span></label>`).join("")}<p class="mut">Mängderna är skalade till din portion. Näringsvärdena är uppskattningar.</p>`}
+else if(tab=="bel")h=bel();
 else if(tab=="home")h=home();
-else if(tab=="profil")h=`<h1>Din profil</h1><div class="c">${fld("Kön","sex",[["Man","Man"],["Kvinna","Kvinna"]])}${fld("Vikt (kg)","w")}${fld("Längd (cm)","h")}${fld("Ålder","a")}${fld("Aktivitet","act",[[1.2,"Stillasittande"],[1.375,"Lätt aktiv"],[1.55,"Måttligt aktiv"],[1.725,"Mycket aktiv"],[1.9,"Extremt aktiv"]])}${fld("Mål","goal",[[-500,"Gå ner i vikt"],[0,"Behålla vikten"],[300,"Bygga muskler"]])}${fld("Kost","diet",[["all","Allt"],["pesc","Utan kött"],["veg","Vegetarisk"],["nofish","Utan fisk och skaldjur"]])}${fld("Eget kalorimål (0 = auto)","kc")}${fld("Protein (g/kg)","prot")}${fld("Fett (% av kcal)","fat")}</div><div class="c" id="res">${res()}</div><p class="mut">Exempelvärden är ifyllda – byt ut dem mot dina egna. Kalorier räknas med Mifflin-St Jeor.</p><h2>Utseende</h2><div class="c"><div class="row"><label>Läge</label><select onchange="setTh(this.value)">${[["","Automatiskt"],["light","Ljust"],["dark","Mörkt"]].map(x=>`<option value="${x[0]}"${x[0]==(ld("th")||"")?" selected":""}>${x[1]}</option>`).join("")}</select></div></div><h2>Säkerhetskopia</h2><div class="c"><div class="mut">Din data finns bara på den här enheten. Tryck "Skapa kopia" och spara texten någonstans, eller klistra in en kopia och tryck "Återställ".</div><textarea id="bk" style="margin-top:8px"></textarea><button class="s" onclick="bkE()">Skapa kopia</button><button class="s" onclick="bkI()">Återställ</button></div><h2>Om appen</h2><div class="c mut">Macro Coach ger allmänna uppskattningar av kalorier och macros och är inte medicinsk rådgivning. Rådgör med läkare eller dietist vid sjukdom, graviditet, ätstörning eller om du är under 18. Näringsvärden i recept och livsmedel är grova uppskattningar. Din data sparas bara på den här enheten.</div>`;
+else if(tab=="profil")h=`<h1>Din profil</h1><div class="c">${fld("Kön","sex",[["Man","Man"],["Kvinna","Kvinna"]])}${fld("Vikt (kg)","w")}${fld("Längd (cm)","h")}${fld("Ålder","a")}${fld("Aktivitet","act",[[1.2,"Stillasittande"],[1.375,"Lätt aktiv"],[1.55,"Måttligt aktiv"],[1.725,"Mycket aktiv"],[1.9,"Extremt aktiv"]])}${fld("Mål","goal",[[-500,"Gå ner i vikt"],[0,"Behålla vikten"],[300,"Bygga muskler"]])}${fld("Kost","diet",[["all","Allt"],["pesc","Utan kött"],["veg","Vegetarisk"],["nofish","Utan fisk och skaldjur"]])}${fld("Så räknas ditt kalorimål","cm",[["real","Efter mina steg och pass (rekommenderas)"],["act","Efter aktivitetsnivån ovan"]])}<div class="mut" style="margin:-4px 0 8px">Rekommenderas: grundförbränning plus dina steg och träningspass. Aktivitetsnivån används bara om du väljer det andra alternativet.</div>${fld("Eget kalorimål (0 = auto)","kc")}${fld("Matbudget per vecka, kr (0 = ingen)","bud")}${fld("Prisnivå","pl",[[0.9,"Lågpris (Willys, Lidl)"],[1,"Snitt"],[1.15,"Dyrare"]])}${fld("Protein (g/kg)","prot")}${fld("Fett (% av kcal)","fat")}${fld("Stegmål per dag","sg")}</div><div class="c" id="res">${res()}</div><p class="mut">Priserna i appen är grova uppskattningar av svenska snittpriser (ICA, Coop, Willys, Hemköp), inte aktuella butikspriser. Justera med Prisnivå.</p><p class="mut">Exempelvärden är ifyllda – byt ut dem mot dina egna. Kalorier räknas med Mifflin-St Jeor.</p><h2>Utseende</h2><div class="c"><div class="row"><label>Läge</label><select onchange="setTh(this.value)">${[["","Automatiskt"],["light","Ljust"],["dark","Mörkt"]].map(x=>`<option value="${x[0]}"${x[0]==(ld("th")||"")?" selected":""}>${x[1]}</option>`).join("")}</select></div></div><h2>Steg från iPhone</h2><div class="c"><div class="mut">En webbapp kan inte läsa Apple Hälsa direkt, men en iPhone-genväg kan skicka stegen hit:</div><ol class="mut"><li>Öppna appen Genvägar och skapa en ny genväg.</li><li>Lägg till "Hitta hälsoprov" (typ Steg, idag) och sedan "Beräkna statistik" (Summa).</li><li>Lägg till "Öppna webbadresser" med appens adress följt av <b>?steg=</b> och sedan summan, t.ex. din-adress/index.html?steg=8421</li><li>Skapa en automation som kör genvägen varje kväll.</li></ol><div class="mut">Tänk på att genvägen öppnar Safari. Använd därför appen i Safari om du vill ha stegen automatiskt – en app på hemskärmen har egen lagring. Annars skriver du in stegen själv på Hem.</div></div><h2>Säkerhetskopia</h2><div class="c"><div class="mut">Din data finns bara på den här enheten. Tryck "Skapa kopia" och spara texten någonstans, eller klistra in en kopia och tryck "Återställ".</div><textarea id="bk" style="margin-top:8px"></textarea><button class="s" onclick="bkE()">Skapa kopia</button><button class="s" onclick="bkI()">Återställ</button><button class="s" onclick="bkF()">💾 Spara som fil</button><label class="s">📂 Öppna fil<input type="file" accept=".json" style="display:none" onchange="bkR(this.files[0])"></label></div><h2>Om appen</h2><div class="c mut">Macro Coach ger allmänna uppskattningar av kalorier och macros och är inte medicinsk rådgivning. Rådgör med läkare eller dietist vid sjukdom, graviditet, ätstörning eller om du är under 18. Näringsvärden i recept och livsmedel är grova uppskattningar. Din data sparas bara på den här enheten.</div>`;
 else if(tab=="idag"){day=day||newDay();const g=G();let t=[0,0,0,0];
 h=`<h1>Dagens mat</h1><button class="b" onclick="day=day.map((d,i)=>lk[i]?d:pick(i));V()">Slumpa ny dag</button>`;
 day.forEach((d,i)=>{const r=d.r,k=r.k*d.x,p=r.p*d.x,c=r.c*d.x,f=r.f*d.x;t[0]+=k;t[1]+=p;t[2]+=c;t[3]+=f;
-h+=`<div class="c"><div class="lnk" onclick="openR(${r.i},${d.x})">${pic(r)}<div class="mut">${S[i]}</div><div class="nm">${r.n} ›</div><div class="mut">${d.x} portion · ${Math.round(k)} kcal · tryck för recept</div></div>${bar(p,c,f)}${mac(p,c,f)}<button class="s" onclick="day[${i}]=pick(${i},day[${i}].r);V()">Byt rätt</button><button class="s" onclick="lk[${i}]=!lk[${i}];V()">${lk[i]?"🔒 Låst":"🔓 Lås"}</button><button class="s" onclick="eat(${i})">${tl().m[i]?"✓ Ätit":"Åt detta"}</button></div>`});
-h+=`<div class="c"><div class="mut">Totalt idag</div><div class="nm">${Math.round(t[0])} av ${Math.round(g.k)} kcal</div>${bar(t[1],t[2],t[3])}${mac(t[1],t[2],t[3])}<div class="mut" style="margin-top:6px">Mål: ${Math.round(g.p)} g protein · ${Math.round(g.c)} g kolh. · ${Math.round(g.f)} g fett</div></div>`+eaten(g)+water()+`<button class="s" onclick="shareDay()">📤 Dela dagens meny</button>`}
+h+=`<div class="c"><div class="lnk" onclick="openR(${r.i},${d.x})">${pic(r)}<div class="mut">${S[i]}</div><div class="nm">${r.n} ›</div><div class="mut">${d.x} portion · ${Math.round(k)} kcal · ca ${Math.round(rc(r)*d.x)} kr · tryck för recept</div></div>${bar(p,c,f)}${mac(p,c,f)}<button class="s" onclick="day[${i}]=pick(${i},day[${i}].r);V()">Byt rätt</button><button class="s" onclick="lk[${i}]=!lk[${i}];V()">${lk[i]?"🔒 Låst":"🔓 Lås"}</button><button class="s" onclick="eat(${i})">${tl().m[i]?"✓ Ätit":"Åt detta"}</button></div>`});
+h+=`<div class="c"><div class="mut">Totalt idag</div><div class="nm">${Math.round(t[0])} av ${Math.round(g.k)} kcal</div>${bar(t[1],t[2],t[3])}${mac(t[1],t[2],t[3])}<div class="mut" style="margin-top:6px">💰 Ca ${Math.round(dcost())} kr${st.bud>0?" av "+Math.round(st.bud/7)+" kr per dag":""}</div><div class="mut" style="margin-top:6px">Mål: ${Math.round(g.p)} g protein · ${Math.round(g.c)} g kolh. · ${Math.round(g.f)} g fett</div></div>`+eaten(g)+water()+`<button class="s" onclick="shareDay()">📤 Dela dagens meny</button>`}
 else if(tab=="vecka"){week=week||[0,1,2,3,4,5,6].map(newDay);const D=["Måndag","Tisdag","Onsdag","Torsdag","Fredag","Lördag","Söndag"];
 h=`<h1>${wsub=="meny"?"Veckomeny":"Inköpslista"}</h1><div class="chips"><button class="${wsub=="meny"?"on":""}" onclick="wsub='meny';V()">Meny</button><button class="${wsub=="ink"?"on":""}" onclick="wsub='ink';V()">Inköpslista</button></div>`;
-if(wsub=="ink")h+=shop();else{h+=`<button class="b" onclick="week=null;V()">Slumpa ny vecka</button>`;week.forEach((d,j)=>{h+=`<div class="c"><div class="nm">${D[j]}</div>`+d.map((m,i)=>`<div class="wk lnk" onclick="openR(${m.r.i},${m.x})"><b>${S[i]}</b>${em(m.r.n)} ${m.r.n} (${m.x}×) ›</div>`).join("")+`</div>`})}}
-else if(tab=="rec"){h=`<h1>Alla recept</h1><button class="b" onclick="addR=!addR;V()">${addR?"Stäng":"+ Eget recept"}</button>${addR?rform():""}`;S.forEach((s,t)=>{h+=`<h2>${s}</h2>`+R.filter(r=>r.t==t).map(r=>`<div class="c r2" onclick="openR(${r.i},1)"><span class="em">${em(r.n)}</span><span><b>${fav[r.n]?"♥ ":""}${hid[r.n]?"🚫 ":""}${r.n}</b><br><span class="mut">${r.k} kcal · P ${r.p} · K ${r.c} · F ${r.f}</span></span></div>`).join("")})}
-else if(tab=="fram")h=`<h1>Logg</h1><div class="chips">${[["dag","Dagbok"],["utv","Utveckling"],["sty","Styrka"],["vikt","Vikt"]].map(x=>`<button class="${x[0]==fsub?"on":""}" onclick="fsub='${x[0]}';V()">${x[1]}</button>`).join("")}</div>`+(fsub=="dag"?diary():fsub=="utv"?utv():fsub=="sty"?sty():fram());
-else{h=`<h1>Träning</h1><select style="width:100%" onchange="setP(this.value)">${Object.keys(P).map(k=>`<option${k==prog?" selected":""}>${k}</option>`).join("")}</select><p class="mut">${P[prog][0]}</p><div class="c"><div class="mut">Vilotimer</div><div class="nm" id="tm" style="font-size:30px">–</div><div class="chips" style="margin:6px 0 0">${[60,90,120,180].map(n=>`<button onclick="rest(${n})">${n} s</button>`).join("")}</div></div><div class="chips">${P[prog].slice(1).map(k=>`<button class="${k==tday?"on":""}" onclick="tday='${k}';V()">${k}</button>`).join("")}</div>`;
-const ex=X[tday].split(";"),ts=ex.reduce((u,e)=>u+ +e.split("|")[1],0),dn=ex.reduce((u,e,i)=>u+[...Array(+e.split("|")[1])].filter((_,j)=>sd[sk(tday+i,j)]).length,0);h+=`<div class="c"><div class="nm">${dn} av ${ts} set klara${dn==ts?" – pass klart! 💪":""}</div><div class="bar" style="height:12px"><span style="width:${100*dn/ts}%;background:var(--ac)"></span></div></div>`;
-ex.forEach((e,i)=>{const a=e.split("|"),key=tday+i,nm=a[0],lp=lastSets(nm);h+=`<div class="c"><div class="nm">${nm}</div><div class="mut">${a[1]} set × ${a[2]} reps${lp.length?" · förra: "+lp.map(x=>x.kg+"×"+x.r).join(", "):""}</div>${badge(nm)}${[...Array(+a[1])].map((_,j)=>{const v=gs(nm,j),pl=lp[j]||lp[lp.length-1]||{};return`<div class="st"><span class="mut">Set ${j+1}</span><input type="number" inputmode="decimal" placeholder="${pl.kg||"kg"}" value="${v.kg||""}" onchange="setSet('${nm}',${j},'kg',this.value,'${key}')"><span class="mut">kg ×</span><input type="number" inputmode="numeric" placeholder="${pl.r||"reps"}" value="${v.r||""}" onchange="setSet('${nm}',${j},'r',this.value,'${key}')"><input type="checkbox" ${sd[sk(key,j)]?"checked":""} onchange="tsd('${sk(key,j)}',this.checked)"></div>`}).join("")}<a class="s" href="${yt(nm)}" target="_blank" rel="noopener">▶ Visa hur</a></div>`});
+h+=wcost();if(wsub=="ink")h+=shop();else{h+=`<button class="b" onclick="week=null;V()">Slumpa ny vecka</button>`;week.forEach((d,j)=>{h+=`<div class="c"><div class="nm">${D[j]}</div>`+d.map((m,i)=>`<div class="wk lnk" onclick="openR(${m.r.i},${m.x})"><b>${S[i]}</b>${em(m.r.n)} ${m.r.n} (${m.x}×) ›</div>`).join("")+`</div>`})}}
+else if(tab=="rec"){h=`<h1>Alla recept</h1><button class="b" onclick="addR=!addR;V()">${addR?"Stäng":"+ Eget recept"}</button>${addR?rform():""}`;S.forEach((s,t)=>{h+=`<h2>${s}</h2>`+R.filter(r=>r.t==t).map(r=>`<div class="c r2" onclick="openR(${r.i},1)"><span class="em">${em(r.n)}</span><span><b>${fav[r.n]?"♥ ":""}${hid[r.n]?"🚫 ":""}${r.n}</b><br><span class="mut">${r.k} kcal · P ${r.p} · K ${r.c} · F ${r.f} · ca ${Math.round(rc(r))} kr</span></span></div>`).join("")})}
+else if(tab=="fram")h=`<h1>Logg</h1><div class="chips">${[["dag","Dagbok"],["utv","Utveckling"],["sty","Styrka"],["vikt","Vikt"],["mat","Mått"]].map(x=>`<button class="${x[0]==fsub?"on":""}" onclick="fsub='${x[0]}';V()">${x[1]}</button>`).join("")}</div>`+(fsub=="dag"?diary():fsub=="utv"?utv():fsub=="sty"?sty():fsub=="mat"?matt():fram());
+else{h=`<h1>Träning</h1><select style="width:100%" onchange="setP(this.value)">${Object.keys(P).map(k=>`<option${k==prog?" selected":""}>${k}</option>`).join("")}</select><p class="mut">${P[prog][0]}</p><button class="s" onclick="edt=!edt;V()">${edt?"✓ Klar":"✏️ Ändra pass"}</button><button class="s" onclick="smo=!smo;V()">⚙️ Schema</button><button class="s" onclick="gm=!gm;gi=0;V();scrollTo(0,0)">${gm?"☰ Visa alla":"▶ Guidat läge"}</button>${smo?schemaH():""}<div class="c"><div class="mut">Vilotimer</div><div class="nm" id="tm" style="font-size:30px">–</div><div class="chips" style="margin:6px 0 0">${[60,90,120,180].map(n=>`<button onclick="rest(${n})">${n} s</button>`).join("")}</div></div><div class="chips">${P[prog].slice(1).map(k=>`<button class="${k==tday?"on":""}" onclick="tday='${k}';V()">${k}</button>`).join("")}</div>`;
+const ex=(X[tday]||"").split(";").filter(Boolean),ts=ex.reduce((u,e)=>u+ +e.split("|")[1],0),dn=ex.reduce((u,e,i)=>u+[...Array(+e.split("|")[1])].filter((_,j)=>sd[sk(tday+i,j)]).length,0);passChk(dn,ts);h+=`<div class="c"><div class="nm">${dn} av ${ts} set klara${ts&&dn==ts?" – pass klart! 💪":""}</div><div class="bar" style="height:12px"><span style="width:${100*dn/(ts||1)}%;background:var(--ac)"></span></div></div>`;
+if(edt)h+=edH();else{gi=Math.max(0,Math.min(gi,ex.length-1));ex.forEach((e,i)=>{if(gm&&i!=gi)return;const a=e.split("|"),key=tday+i,nm=a[0],lp=lastSets(nm);h+=`<div class="c"><div class="nm">${nm}</div><div class="mut">${a[1]} set × ${a[2]} reps${lp.length?" · förra: "+lp.map(x=>x.kg+"×"+x.r).join(", "):""}</div>${badge(nm)}${sug(a,lp)}${[...Array(+a[1])].map((_,j)=>{const v=gs(nm,j),pl=lp[j]||lp[lp.length-1]||{};return`<div class="st"><span class="mut">Set ${j+1}</span><input type="number" inputmode="decimal" placeholder="${pl.kg||"kg"}" value="${v.kg||""}" onchange="setSet('${nm}',${j},'kg',this.value,'${key}')"><span class="mut">kg ×</span><input type="number" inputmode="numeric" placeholder="${pl.r||"reps"}" value="${v.r||""}" onchange="setSet('${nm}',${j},'r',this.value,'${key}')"><input type="checkbox" ${sd[sk(key,j)]?"checked":""} onchange="tsd('${sk(key,j)}',this.checked)"></div>`}).join("")}<a class="s" href="${yt(nm)}" target="_blank" rel="noopener">▶ Visa hur</a></div>`});if(gm&&ex.length)h+=gnav(ex.length)}
 h+=`<p class="mut">Skriv in vikten du använde – den sparas i din webbläsare. "Visa hur" öppnar videor på YouTube.</p>`}
+const M=["idag","vecka","rec"].includes(tab);if(M)msub=tab;if(!rec&&M)h=`<div class="chips">${[["idag","Idag"],["vecka","Vecka"],["rec","Recept"]].map(x=>`<button class="${x[0]==tab?"on":""}" onclick="tab='${x[0]}';V();scrollTo(0,0)">${x[1]}</button>`).join("")}</div>`+h;
 document.getElementById("v").innerHTML=h;
-document.getElementById("n").innerHTML=[["home","🏠 Hem"],["idag","🍽️ Idag"],["vecka","📅 Vecka"],["tran","💪 Träning"],["rec","📖 Recept"],["fram","📈 Logg"],["profil","👤 Profil"]].map(a=>`<button class="${!rec&&a[0]==tab?"on":""}" onclick="tab='${a[0]}';rec=null;V();scrollTo(0,0)">${a[1].replace(" ","<br>")}</button>`).join("")}
+document.getElementById("n").innerHTML=[["home","🏠","Hem"],["mat","🍽️","Mat"],["tran","💪","Träning"],["bel","🏆","Belöning"],["fram","📈","Logg"],["profil","👤","Profil"]].map(a=>`<button class="${!rec&&(a[0]==tab||a[0]=="mat"&&M)?"on":""}" onclick="${a[0]=="mat"?"tab=M0();":"tab='"+a[0]+"';"}rec=null;V();scrollTo(0,0)"><b>${a[1]}</b>${a[2]}</button>`).join("");chk()}
 V();
 </script>
 </body>
